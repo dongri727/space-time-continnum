@@ -98,20 +98,6 @@ class _WhenPageState extends State<WhenPage> {
                 // principal year
                 child: Column(
                   children: [
-
-
-
-/*                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: TffFormat(
-                        hintText: "month-date as 0131 (option)",
-                        onChanged: (value) {
-                          newDate = (value);
-                        },
-                        tffColor1: Colors.black54,
-                        tffColor2: const Color(0x99e6e6fa),
-                      ),
-                    ),*/
                     //month
                          Padding(
                           padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
@@ -119,13 +105,15 @@ class _WhenPageState extends State<WhenPage> {
                             onPressed: () {
                               setState(toggleMonthButton);
                               },
-                              child: const Text('Add a "month" ?'),
+                              child: const Text('Select "Month" ?'),
                               ),
                         ),
                     //dropdownButtonの無効化で対応
                     Padding(
                       padding: const EdgeInsets.all(20.0),
                       child: Container(
+                        width: 250,
+                        alignment: Alignment.center,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15.0),
                           color: const Color(0x99e6e6fa),
@@ -155,59 +143,18 @@ class _WhenPageState extends State<WhenPage> {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
-                      child: OutlinedButton(
-                        onPressed: () {
-                          setState(toggleDateButton);
-                        },
-                        child: const Text('Add a "date" ?'),
-                      ),
-                    ),
-                    //date
-                    Padding(
-                      padding: const EdgeInsets.all(20.0),
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15.0),
-                          color: const Color(0x99e6e6fa),
-                        ),
-                        child: DropdownButton<String>(
-                          value: isSelectedJour,
-                          alignment: Alignment.center,
-                          dropdownColor: const Color(0xCCe6e6fa),
-                          borderRadius: BorderRadius.circular(15.0),
-                          onChanged: isDisabledD
-                            ? null
-                            : (String? value) {
-                            setState(() {
-                              isSelectedJour;
-                            });
-                          },
-                          items:
-                          jours.map<DropdownMenuItem<String>>((String value) {
-                            return DropdownMenuItem<String>(
-                              value: value,
-                              child: Text(
-                                  style:
-                                  SpaceTimeTheme.textTheme.bodyMedium,
-                                  value),
-                            );
-                          }).toList(),
-                        ),
-                      ),
-                    ),
+
                     Padding(
                       padding: const EdgeInsets.all(10.0),
                       child: Text(
                         style: SpaceTimeTheme.textTheme.bodyLarge,
-                        'Month-Date',
+                        'Format',
                       ),
                     ),
                     const HintText(
                         hintText:
                         'If it lasts for a while,'),
-                    const HintText(hintText: 'please enter a start date'),
+                    const HintText(hintText: 'please select "Start Month"'),
 
                   ],
                 ),
@@ -217,8 +164,63 @@ class _WhenPageState extends State<WhenPage> {
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(60, 20, 60, 10),
                     child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(20, 20, 20, 0),
+                          child: OutlinedButton(
+                            onPressed: () {
+                              setState(toggleDateButton);
+                            },
+                            child: const Text('Select "Date" ?'),
+                          ),
+                        ),
+                        //date
+                        Padding(
+                          padding: const EdgeInsets.all(20.0),
+                          child: Container(
+                            width: 250,
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(15.0),
+                              color: const Color(0x99e6e6fa),
+                            ),
+                            child: DropdownButton<String>(
+                              value: isSelectedJour,
+                              alignment: Alignment.center,
+                              dropdownColor: const Color(0xCCe6e6fa),
+                              borderRadius: BorderRadius.circular(15.0),
+                              onChanged: isDisabledD
+                                  ? null
+                                  : (String? value) {
+                                setState(() {
+                                  isSelectedJour;
+                                });
+                              },
+                              items:
+                              jours.map<DropdownMenuItem<String>>((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(
+                                      style:
+                                      SpaceTimeTheme.textTheme.bodyMedium,
+                                      value),
+                                );
+                              }).toList(),
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(10.0),
+                          child: Text(
+                            style: SpaceTimeTheme.textTheme.bodyLarge,
+                            'Format',
+                          ),
+                        ),
+                        const HintText(
+                            hintText:
+                            'If it lasts for a while,'),
+                        const HintText(hintText: 'please enter "Start Date"'),
 
 
 
@@ -232,7 +234,7 @@ class _WhenPageState extends State<WhenPage> {
                       // date local
                       const HintText(hintText: 'Other Calendars'),
                       Padding(
-                        padding: const EdgeInsets.all(20.0),
+                        padding: const EdgeInsets.fromLTRB(50, 20, 100, 20),
                         child: TffFormat(
                           hintText: "ex: Hijura year-month-date (option)",
                           onChanged: (text) {
