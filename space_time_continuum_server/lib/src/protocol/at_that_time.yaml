@@ -1,0 +1,4 @@
+class: AtThatTime
+table: atts
+fields: 
+  att: String

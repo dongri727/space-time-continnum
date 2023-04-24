@@ -1,0 +1,31 @@
+atThatTime:
+  - getAtThatTime:
+  - addAtThatTime:
+categories:
+  - getCategories:
+  - addCategories:
+historical:
+  - addHistorical:
+historicalJours:
+  - getHistoricalJours:
+  - addHistoricalJours:
+historicalLocalDates:
+  - getHistoricalLocalDtes:
+  - addHistoricalLocalDates:
+historicalMois:
+  - getHistoricalMois:
+  - addHistoricalMois:
+organisations:
+  - getOrganisations:
+  - addOrganisations:
+pays:
+  - getPays:
+people:
+  - getPeople:
+  - addPeople:
+places:
+  - getPlaces:
+  - addPlaces:
+terms:
+  - getTerms:
+  - addTerms:

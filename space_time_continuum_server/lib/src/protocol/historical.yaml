@@ -1,0 +1,6 @@
+class: Historical
+table: historical
+fields: 
+  annee: double
+  affair: String
+  pays: String

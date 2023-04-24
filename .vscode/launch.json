@@ -1,0 +1,40 @@
+{
+    // IntelliSense を使用して利用可能な属性を学べます。
+    // 既存の属性の説明をホバーして表示します。
+    // 詳細情報は次を確認してください: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "space_time_continuum_client",
+            "cwd": "space_time_continuum_client",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "space_time_continuum_flutter",
+            "cwd": "space_time_continuum_flutter",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "space_time_continuum_flutter (profile mode)",
+            "cwd": "space_time_continuum_flutter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "space_time_continuum_flutter (release mode)",
+            "cwd": "space_time_continuum_flutter",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "space_time_continuum_server",
+            "cwd": "space_time_continuum_server",
+            "request": "launch",
+            "type": "dart"
+        }
+    ]
+}

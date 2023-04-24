@@ -1,0 +1,5 @@
+class: HistoricalJours
+table: historical_jours
+fields: 
+  historical_id: int
+  jour: String

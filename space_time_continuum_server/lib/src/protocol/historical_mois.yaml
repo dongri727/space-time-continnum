@@ -1,0 +1,5 @@
+class: HistoricalMois
+table: historical_mois
+fields: 
+  historical_id: int
+  mois: String

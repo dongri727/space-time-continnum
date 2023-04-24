@@ -1,0 +1,8 @@
+class: Pays
+table: pays
+fields: 
+  pays: String
+  captal: String
+  three_d_x: double
+  three_d_y: double
+  three_d_z: double

@@ -1,0 +1,5 @@
+class: HistoricalLocalDates
+table: historical_local_dates
+fields: 
+  historical_id: int
+  localDate: String
