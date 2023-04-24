@@ -301,6 +301,32 @@ class _WhatPageState extends State<WhatPage> {
                               tffColor1: Colors.black54,
                               tffColor2: const Color(0x99e6e6fa),
                             )),
+                        Padding(
+                          padding: const EdgeInsets.fromLTRB(50, 50, 50, 10),
+                          child: Text(
+                            style: SpaceTimeTheme.textTheme.bodyLarge,
+                            'Format',
+                          ),
+                        ),
+                        const HintText(
+                            hintText:
+                            'Ex: -13.8 (as Billion years) as Big Bang'),
+                        const HintText(
+                            hintText:
+                            'Ex: -3200 (as Million years) as Cyanobacteria'),
+                        const HintText(
+                            hintText:
+                            'Ex: -3180 (as Thousand years) as Lucy (Australopithecus)'),
+                        const HintText(
+                            hintText:
+                            'Ex: -9500 (by dating methods) as Gobekli Tepe'),
+                        const HintText(
+                            hintText:
+                            'Ex: -766 (as Historical years) as The Ancient Olympic Game'),
+                        const HintText(
+                            hintText:
+                            'Ex: 1969 (as Historical years) as Apollo-11 was launched '),
+
                       ],
 
                     )),
@@ -309,9 +335,9 @@ class _WhatPageState extends State<WhatPage> {
                   child: Column(
                     children: [
                       Padding(
-                          padding: const EdgeInsets.fromLTRB(20, 50, 20, 20),
+                          padding: const EdgeInsets.fromLTRB(100, 100, 100, 20),
                           child: TffFormat(
-                            hintText: "Event　(within 50 words)",
+                            hintText: "Event　(within 50 letters)",
                             onChanged: (text) {
                               newName = text;
                             },
@@ -319,6 +345,7 @@ class _WhatPageState extends State<WhatPage> {
                               tffColor2: const Color(0x99e6e6fa),
                           )
                       ),
+
                     ],
                   ),
                 ),

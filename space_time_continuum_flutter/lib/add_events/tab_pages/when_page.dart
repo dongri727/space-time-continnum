@@ -219,31 +219,6 @@ class _WhenPageState extends State<WhenPage> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Padding(
-                          padding: const EdgeInsets.all(10.0),
-                          child: Text(
-                            style: SpaceTimeTheme.textTheme.bodyLarge,
-                            'YEAR',
-                          ),
-                        ),
-                        const HintText(
-                            hintText:
-                            'Ex: -13.8 (as Billion years) \n as Big Bang'),
-                        const HintText(
-                            hintText:
-                            'Ex: -3200 (as Million years) \n as Cyanobacteria'),
-                        const HintText(
-                            hintText:
-                            'Ex: -3180 (as Thousand years)\n as Lucy (Australopithecus)'),
-                        const HintText(
-                            hintText:
-                            'Ex: -9500 (by dating methods)\n as Gobekli Tepe'),
-                        const HintText(
-                            hintText:
-                            'Ex: -766 (as Historical years)\n as The Ancient Olympic Game'),
-                        const HintText(
-                            hintText:
-                            'Ex: 1969 (as Historical years)\n as Apollo-11 was launched \n'),
 
 
 
