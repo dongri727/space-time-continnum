@@ -8,25 +8,29 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
 
-class Pays extends _i1.SerializableEntity {
-  Pays({
+class Lieux extends _i1.SerializableEntity {
+  Lieux({
     this.id,
-    required this.pays,
-    required this.captal,
+    required this.historical_id,
+    required this.latitude,
+    required this.longitude,
     required this.three_d_x,
     required this.three_d_y,
     required this.three_d_z,
   });
 
-  factory Pays.fromJson(
+  factory Lieux.fromJson(
     Map<String, dynamic> jsonSerialization,
     _i1.SerializationManager serializationManager,
   ) {
-    return Pays(
+    return Lieux(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      pays: serializationManager.deserialize<String>(jsonSerialization['pays']),
-      captal:
-          serializationManager.deserialize<String>(jsonSerialization['captal']),
+      historical_id: serializationManager
+          .deserialize<int>(jsonSerialization['historical_id']),
+      latitude: serializationManager
+          .deserialize<double>(jsonSerialization['latitude']),
+      longitude: serializationManager
+          .deserialize<double>(jsonSerialization['longitude']),
       three_d_x: serializationManager
           .deserialize<double>(jsonSerialization['three_d_x']),
       three_d_y: serializationManager
@@ -41,9 +45,11 @@ class Pays extends _i1.SerializableEntity {
   /// the id will be null.
   int? id;
 
-  String pays;
+  int historical_id;
 
-  String captal;
+  double latitude;
+
+  double longitude;
 
   double three_d_x;
 
@@ -55,8 +61,9 @@ class Pays extends _i1.SerializableEntity {
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'pays': pays,
-      'captal': captal,
+      'historical_id': historical_id,
+      'latitude': latitude,
+      'longitude': longitude,
       'three_d_x': three_d_x,
       'three_d_y': three_d_y,
       'three_d_z': three_d_z,

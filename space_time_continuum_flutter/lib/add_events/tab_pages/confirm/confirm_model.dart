@@ -1,3 +1,5 @@
+import 'dart:core';
+
 import 'package:flutter/foundation.dart';
 import 'package:serverpod_flutter/serverpod_flutter.dart';
 import 'package:space_time_continuum_client/space_time_continuum_client.dart';
@@ -20,11 +22,27 @@ class ConfirmModel extends ChangeNotifier {
 
   String place = "";
 
+  final latitude = 0.0;
+  final longitude = 0.0;
+  final dx = 0.0;
+  final dy = 0.0;
+  final dz = 0.0;
+
+  List<String> countriesInvolved = [];
+  List<String> attsInvolved = [];
+  List<String> orgs = [];
+  List<String> people = [];
+  List<String> categories = [];
+  List<String> terms = [];
+
   late int historicalLastVal;
   late int placeLastVal;
   late int historicalMoisLastVal;
   late int historicalJourLastVal;
   late int historicalLocalDateLastVal;
+  late int historicalPlaceLastVal;
+  late int historicalATTLastVal;
+  late int historicalLieuxLastVal;
 
   //insert into DB
   Future<void> save(Confirm confirm) async {
@@ -68,13 +86,90 @@ class ConfirmModel extends ChangeNotifier {
       };
     }
 
-    addPlace() async {
-      var places = Places(place: place);
-      placeLastVal = await client.places.addPlaces(places);
-      <String, dynamic>{
+/*     addHistoricalPlaces() async {
+      var historicalPlaces = HistoricalPlaces(historical_id: historicalLastVal, place: place);
+      historicalLastValPlaceLastVal = await client.historicalPlaces.addHistoricalPlaces(historicalPlaces);
+      <String, String?>{
         "place": confirm.place,
       };
+    } */
+
+/*     addHistoricalATTs() async {
+      var historicalATTs = HistoricalATTs(historical_id: historicalLastVal, att: att);
+      historicalATTLastVal = await client.historicalATTS.addHistoricalATTs(historicalATTs);
+      <String, String?>{
+        "att": confirm.att,
+      };
+    } */
+
+/*     addHistoricalLieux() async {
+      var historicalLieux = HistoricalLieux(
+        historical_id: historicalLastVal,
+        latitude: latitude,
+        longitude: longitude,
+        three_d_x: dx,
+        three_d_y: dy,
+        three_d_z: dz,
+      );
+      historicalLieuxLastVal = await client.historicalLieux.addHistoricalLieux(historicalLieux);
+      <double, double?>{
+        latitude: confirm.latitude,
+        longitude: confirm.longitude,
+        dx: confirm.x,
+        dy: confirm.y,
+        dz: confirm.z,
+      };
+    } */
+
+/*     //todo Listを入力するにはどうすればいいのか？
+    addHistoricalPaysInvolved() async {
+      var historicalPaysInvolved = HistoricalPaysInvolved(historical_id: historicalLastVal, countriesInvolved: countriesInvolved);
+      historicalPaysInvolvedLastVal = await client.historicalPaysInvolved.addHistoricalPaysInvolved(historicalPaysInvolved);
+      <List<String>, List<String>?>{
+        countriesInvolved: confirm.selectedPays,
+      };
+    } */
+
+/*     addHistoricalATTsInvolved() async {
+      var historicalATTsInvolved = HistoricalATTsInvolved(historical_id: historicalLastVal, attsInvolved: attsInvolved);
+      historicalATTInvolvedLastVal = await client.historicalATTsInvolved.addHistoricalATTsinvolved(historicalATTsInvolved);
+      <List<String>, List<String>?>{
+        attsInvolved: confirm.selectedATT,
+      };
     }
+ */
+/*     addHistoricalOrgs() async {
+      var historicalOrgs = HistoricalOrgs(historical_id: historicalLastVal, orgs: orgs);
+      historicalOrgLastVal = await client.historicalOrgs.addHistoricalOrgs(historicalOrgs);
+      <List<String>, List<String>?>{
+        orgs: confirm.selectedOrg,
+      };
+    }
+ */
+/*     Future addHistoricalPeople() async {
+      var historicalPeople = HistoricalPeople(historical_id: historicalLastVal, people: people);
+      historicalPeopleLastVale = await client.historicalPeople.addHistoricalPeople(historicalPeople);
+      <List<String>, List<String>?>{
+        people: confirm.selectedWho,
+      };
+    }
+ */
+/*     Future addHistoricalCategories() async {
+      var historicalCategories = HistoricalCategories(historica_id: historicalLastVal, categories: categories);
+      hisoricalCategoriesLastVal = await client.historicalCategories.addHistoricalCategories(historicalCategories);
+      <List<String>, List<String>?>{
+        categories: confirm.selectedCategory,
+      };
+    }
+ */
+/*     Future addHistoricalTerms() async {
+      var historicalTerms = HistoricalTerms(historical_id: historicalLastVal, terms: terms);
+      historicalTermsLastVal = await client.historicalTerms.addHistoricalTerms(historicalTerms);
+      <List<String>, List<String>?>{
+        terms: confirm.selectedTerm,
+      };
+    }
+ */
 
     //addLocation()
 
@@ -91,63 +186,118 @@ class ConfirmModel extends ChangeNotifier {
         if (confirm.dateLocal != null) {
           addHistoricalLocalDates;
         }
-        //where
+/*         //where
         if (confirm.place != null) {
-          addPlace();
+          addHistoricalPlaces();
         }
-
+        if (confirm.att != null) {
+          addHistoricalATTs();
+        }
+        if (confirm.latitude != null) {
+          addHistoricalLieux();
+        }
+        //participantsA
+        if (confirm.selectedPays.isNotEmpty) {
+          addHistoricalPaysInvolved();
+        }
+        if (confirm.selectedATT.isNotEmpty) {
+          addHistoricalATTsInvolved();
+        }
+        //participantsB
+        if (confirm.selectedOrg.isNotEmpty) {
+          addHistoricalOrgs();
+        }
+        if(confirm.selectedWho.isNotEmpty) {
+          addHistoricalPeople();
+        }
+        //terms
+        if(confirm.selectedCategory.isNotEmpty){
+          addHistoricalCategories();
+        }
+        if (confirm.selectedTerm.isNotEmpty){
+          addHistoricalTerms();
+        }
+ */
         break;
       case 'BillionYears':
+        //where
+        if (confirm.place != null) {
+/*           addBillionPlaces();
+        }
+        if (confirm.latitude != null) {
+          addBillionLieux();
+        }
+        //participantsA
+        if (confirm.selectedPays.isNotEmpty) {
+          addBillionPaysInvolved();
+        }
+        if (confirm.selectedATT.isNotEmpty) {
+          addBillionATTsInvolved();
+        }
+        //participantsB
+        if (confirm.selectedOrg.isNotEmpty) {
+          addBillionOrgs();
+        }
+        if(confirm.selectedWho.isNotEmpty) {
+          addBillionPeople();
+        }
+        //terms
+        if(confirm.selectedCategory.isNotEmpty){
+          addBilliobCategories();
+        }
+        if (confirm.selectedTerm.isNotEmpty){
+          addBillionTerms();
+        } */
+          break;
+/*       case 'MillionYears':
         break;
-      case 'MillionYears':
+      case 'ThousandYears':
         break;
+      case 'DatingMethods':
+        break;
+ */
+        }
+
+        //if place data exist, insert place data into Places table
+
+        //Insert 2Ids into lilational table
+
+        //if longitude, latitude data exist, insert into locations table
+
+        //Insert 2Ids into lilational table
+
+        //if date data exist, insert date data into date table
+
+        //Insert 2Ids into lilational table
+
+        //if att data exist, insert att data into att table
+
+        //Insert 2Ids into lilational table
+
+        //country involved
+
+        //Insert 2Ids into lilational table
+
+        //ATT involved
+        //todo Listを入力するのはこれでいいのか？
+        if (confirm.selectedATT.isNotEmpty) {}
+
+      //Insert 2Ids into lilational table
+
+      //organizations involved
+      //todo Listを入力するのはこれでいいのか？
+
+      //people involved
+      //todo Listを入力するのはこれでいいのか？
+
+      //category
+      //todo Listを入力するのはこれでいいのか？
+
+      //term
+      //todo Listを入力するのはこれでいいのか？
+
+      //ALL
+      //todo 詳細表示を迅速にするための、すべてを一括管理するtableは必要か。
     }
-
-    //if place data exist, insert place data into Places table
-    if (confirm.place != null) {
-      addPlace();
-    }
-
-    //Insert 2Ids into lilational table
-
-    //if longitude, latitude data exist, insert into locations table
-
-    //Insert 2Ids into lilational table
-
-    //if date data exist, insert date data into date table
-
-    //Insert 2Ids into lilational table
-
-    //if att data exist, insert att data into att table
-    if (confirm.att != null) {}
-
-    //Insert 2Ids into lilational table
-
-    //country involved
-    //todo Listを入力するのはこれでいいのか？
-    if (confirm.selectedPays.isNotEmpty) {}
-
-    //Insert 2Ids into lilational table
-
-    //ATT involved
-    //todo Listを入力するのはこれでいいのか？
-    if (confirm.selectedATT.isNotEmpty) {}
-
-    //Insert 2Ids into lilational table
-
-    //organizations involved
-    //todo Listを入力するのはこれでいいのか？
-
-    //people involved
-    //todo Listを入力するのはこれでいいのか？
-
-    //category
-    //todo Listを入力するのはこれでいいのか？
-
-    //term
-    //todo Listを入力するのはこれでいいのか？
-
-    //ALL
-    //todo 詳細表示を迅速にするための、すべてを一括管理するtableは必要か。
   }
 }

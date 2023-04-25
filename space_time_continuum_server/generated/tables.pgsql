@@ -82,6 +82,24 @@ ALTER TABLE ONLY "historical_mois"
 
 
 --
+-- Class Lieux as table lieux
+--
+
+CREATE TABLE "lieux" (
+  "id" serial,
+  "historical_id" integer NOT NULL,
+  "latitude" double precision NOT NULL,
+  "longitude" double precision NOT NULL,
+  "three_d_x" double precision NOT NULL,
+  "three_d_y" double precision NOT NULL,
+  "three_d_z" double precision NOT NULL
+);
+
+ALTER TABLE ONLY "lieux"
+  ADD CONSTRAINT lieux_pkey PRIMARY KEY (id);
+
+
+--
 -- Class Organisations as table organisations
 --
 
@@ -103,7 +121,7 @@ CREATE TABLE "pays" (
   "pays" text NOT NULL,
   "captal" text NOT NULL,
   "three_d_x" double precision NOT NULL,
-  "theee_d_y" double precision NOT NULL,
+  "three_d_y" double precision NOT NULL,
   "three_d_z" double precision NOT NULL
 );
 

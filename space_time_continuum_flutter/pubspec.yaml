@@ -24,7 +24,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  serverpod_flutter: ^1.0.1
+  serverpod_flutter: ^1.1.0
   space_time_continuum_client:
     path: ../space_time_continuum_client
 
@@ -34,8 +34,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^4.0.3
   provider: ^6.0.5
-  serverpod_auth_shared_flutter: ^1.0.1
-  serverpod_auth_email_flutter: ^1.0.1
+  serverpod_auth_shared_flutter: ^1.1.0
+  serverpod_auth_email_flutter: ^1.1.0
   
 
 dev_dependencies:

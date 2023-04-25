@@ -8,25 +8,29 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
 
-class Pays extends _i1.TableRow {
-  Pays({
+class Lieux extends _i1.TableRow {
+  Lieux({
     int? id,
-    required this.pays,
-    required this.captal,
+    required this.historical_id,
+    required this.latitude,
+    required this.longitude,
     required this.three_d_x,
     required this.three_d_y,
     required this.three_d_z,
   }) : super(id);
 
-  factory Pays.fromJson(
+  factory Lieux.fromJson(
     Map<String, dynamic> jsonSerialization,
     _i1.SerializationManager serializationManager,
   ) {
-    return Pays(
+    return Lieux(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
-      pays: serializationManager.deserialize<String>(jsonSerialization['pays']),
-      captal:
-          serializationManager.deserialize<String>(jsonSerialization['captal']),
+      historical_id: serializationManager
+          .deserialize<int>(jsonSerialization['historical_id']),
+      latitude: serializationManager
+          .deserialize<double>(jsonSerialization['latitude']),
+      longitude: serializationManager
+          .deserialize<double>(jsonSerialization['longitude']),
       three_d_x: serializationManager
           .deserialize<double>(jsonSerialization['three_d_x']),
       three_d_y: serializationManager
@@ -36,11 +40,13 @@ class Pays extends _i1.TableRow {
     );
   }
 
-  static final t = PaysTable();
+  static final t = LieuxTable();
 
-  String pays;
+  int historical_id;
 
-  String captal;
+  double latitude;
+
+  double longitude;
 
   double three_d_x;
 
@@ -49,13 +55,14 @@ class Pays extends _i1.TableRow {
   double three_d_z;
 
   @override
-  String get tableName => 'pays';
+  String get tableName => 'lieux';
   @override
   Map<String, dynamic> toJson() {
     return {
       'id': id,
-      'pays': pays,
-      'captal': captal,
+      'historical_id': historical_id,
+      'latitude': latitude,
+      'longitude': longitude,
       'three_d_x': three_d_x,
       'three_d_y': three_d_y,
       'three_d_z': three_d_z,
@@ -66,8 +73,9 @@ class Pays extends _i1.TableRow {
   Map<String, dynamic> toJsonForDatabase() {
     return {
       'id': id,
-      'pays': pays,
-      'captal': captal,
+      'historical_id': historical_id,
+      'latitude': latitude,
+      'longitude': longitude,
       'three_d_x': three_d_x,
       'three_d_y': three_d_y,
       'three_d_z': three_d_z,
@@ -78,8 +86,9 @@ class Pays extends _i1.TableRow {
   Map<String, dynamic> allToJson() {
     return {
       'id': id,
-      'pays': pays,
-      'captal': captal,
+      'historical_id': historical_id,
+      'latitude': latitude,
+      'longitude': longitude,
       'three_d_x': three_d_x,
       'three_d_y': three_d_y,
       'three_d_z': three_d_z,
@@ -95,11 +104,14 @@ class Pays extends _i1.TableRow {
       case 'id':
         id = value;
         return;
-      case 'pays':
-        pays = value;
+      case 'historical_id':
+        historical_id = value;
         return;
-      case 'captal':
-        captal = value;
+      case 'latitude':
+        latitude = value;
+        return;
+      case 'longitude':
+        longitude = value;
         return;
       case 'three_d_x':
         three_d_x = value;
@@ -115,9 +127,9 @@ class Pays extends _i1.TableRow {
     }
   }
 
-  static Future<List<Pays>> find(
+  static Future<List<Lieux>> find(
     _i1.Session session, {
-    PaysExpressionBuilder? where,
+    LieuxExpressionBuilder? where,
     int? limit,
     int? offset,
     _i1.Column? orderBy,
@@ -126,8 +138,8 @@ class Pays extends _i1.TableRow {
     bool useCache = true,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.find<Pays>(
-      where: where != null ? where(Pays.t) : null,
+    return session.db.find<Lieux>(
+      where: where != null ? where(Lieux.t) : null,
       limit: limit,
       offset: offset,
       orderBy: orderBy,
@@ -138,17 +150,17 @@ class Pays extends _i1.TableRow {
     );
   }
 
-  static Future<Pays?> findSingleRow(
+  static Future<Lieux?> findSingleRow(
     _i1.Session session, {
-    PaysExpressionBuilder? where,
+    LieuxExpressionBuilder? where,
     int? offset,
     _i1.Column? orderBy,
     bool orderDescending = false,
     bool useCache = true,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.findSingleRow<Pays>(
-      where: where != null ? where(Pays.t) : null,
+    return session.db.findSingleRow<Lieux>(
+      where: where != null ? where(Lieux.t) : null,
       offset: offset,
       orderBy: orderBy,
       orderDescending: orderDescending,
@@ -157,27 +169,27 @@ class Pays extends _i1.TableRow {
     );
   }
 
-  static Future<Pays?> findById(
+  static Future<Lieux?> findById(
     _i1.Session session,
     int id,
   ) async {
-    return session.db.findById<Pays>(id);
+    return session.db.findById<Lieux>(id);
   }
 
   static Future<int> delete(
     _i1.Session session, {
-    required PaysExpressionBuilder where,
+    required LieuxExpressionBuilder where,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.delete<Pays>(
-      where: where(Pays.t),
+    return session.db.delete<Lieux>(
+      where: where(Lieux.t),
       transaction: transaction,
     );
   }
 
   static Future<bool> deleteRow(
     _i1.Session session,
-    Pays row, {
+    Lieux row, {
     _i1.Transaction? transaction,
   }) async {
     return session.db.deleteRow(
@@ -188,7 +200,7 @@ class Pays extends _i1.TableRow {
 
   static Future<bool> update(
     _i1.Session session,
-    Pays row, {
+    Lieux row, {
     _i1.Transaction? transaction,
   }) async {
     return session.db.update(
@@ -199,7 +211,7 @@ class Pays extends _i1.TableRow {
 
   static Future<void> insert(
     _i1.Session session,
-    Pays row, {
+    Lieux row, {
     _i1.Transaction? transaction,
   }) async {
     return session.db.insert(
@@ -210,13 +222,13 @@ class Pays extends _i1.TableRow {
 
   static Future<int> count(
     _i1.Session session, {
-    PaysExpressionBuilder? where,
+    LieuxExpressionBuilder? where,
     int? limit,
     bool useCache = true,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.count<Pays>(
-      where: where != null ? where(Pays.t) : null,
+    return session.db.count<Lieux>(
+      where: where != null ? where(Lieux.t) : null,
       limit: limit,
       useCache: useCache,
       transaction: transaction,
@@ -224,19 +236,21 @@ class Pays extends _i1.TableRow {
   }
 }
 
-typedef PaysExpressionBuilder = _i1.Expression Function(PaysTable);
+typedef LieuxExpressionBuilder = _i1.Expression Function(LieuxTable);
 
-class PaysTable extends _i1.Table {
-  PaysTable() : super(tableName: 'pays');
+class LieuxTable extends _i1.Table {
+  LieuxTable() : super(tableName: 'lieux');
 
   /// The database id, set if the object has been inserted into the
   /// database or if it has been fetched from the database. Otherwise,
   /// the id will be null.
   final id = _i1.ColumnInt('id');
 
-  final pays = _i1.ColumnString('pays');
+  final historical_id = _i1.ColumnInt('historical_id');
 
-  final captal = _i1.ColumnString('captal');
+  final latitude = _i1.ColumnDouble('latitude');
+
+  final longitude = _i1.ColumnDouble('longitude');
 
   final three_d_x = _i1.ColumnDouble('three_d_x');
 
@@ -247,13 +261,14 @@ class PaysTable extends _i1.Table {
   @override
   List<_i1.Column> get columns => [
         id,
-        pays,
-        captal,
+        historical_id,
+        latitude,
+        longitude,
         three_d_x,
         three_d_y,
         three_d_z,
       ];
 }
 
-@Deprecated('Use PaysTable.t instead.')
-PaysTable tPays = PaysTable();
+@Deprecated('Use LieuxTable.t instead.')
+LieuxTable tLieux = LieuxTable();

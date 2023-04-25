@@ -316,13 +316,13 @@ class _WhatPageState extends State<WhatPage> {
                             'Ex: -3200 (as Million years) as Cyanobacteria'),
                         const HintText(
                             hintText:
-                            'Ex: -3180 (as Thousand years) as Lucy (Australopithecus)'),
+                            'Ex: -3180 (as Thousand years) \n as Lucy (Australopithecus)'),
                         const HintText(
                             hintText:
                             'Ex: -9500 (by dating methods) as Gobekli Tepe'),
                         const HintText(
                             hintText:
-                            'Ex: -766 (as Historical years) as The Ancient Olympic Game'),
+                            'Ex: -766 (as Historical years) \n as The Ancient Olympic Game'),
                         const HintText(
                             hintText:
                             'Ex: 1969 (as Historical years) as Apollo-11 was launched '),

@@ -96,34 +96,7 @@ class _WherePageState extends State<WherePage> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Expanded(
-                flex: 1,
-                child: Column(
-                  children: [
 
-                    Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: TffFormat(
-                          hintText: "Latitude",
-                          onChanged: (value) {
-                            newLatitude = double.tryParse(value)!;
-                          },
-                          tffColor1: Colors.black54,
-                          tffColor2: const Color(0x99e6e6fa),
-                        )),
-                    Padding(
-                        padding: const EdgeInsets.all(20.0),
-                        child: TffFormat(
-                          hintText: "Longitude",
-                          onChanged: (value) {
-                            newLongitude = double.tryParse(value)!;
-                          },
-                          tffColor1: Colors.black54,
-                          tffColor2: const Color(0x99e6e6fa),
-                        )),
-                  ],
-                ),
-              ),
               Expanded(
                   flex: 1,
                   child: Column(
@@ -229,6 +202,35 @@ class _WherePageState extends State<WherePage> {
                       )
                     ],
                   )),
+              Expanded(
+                flex: 1,
+                child: Column(
+                  children: [
+
+                    Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: TffFormat(
+                          hintText: "Latitude",
+                          onChanged: (value) {
+                            newLatitude = double.tryParse(value)!;
+                          },
+                          tffColor1: Colors.black54,
+                          tffColor2: const Color(0x99e6e6fa),
+                        )),
+                    Padding(
+                        padding: const EdgeInsets.all(20.0),
+                        child: TffFormat(
+                          hintText: "Longitude",
+                          onChanged: (value) {
+                            newLongitude = double.tryParse(value)!;
+                          },
+                          tffColor1: Colors.black54,
+                          tffColor2: const Color(0x99e6e6fa),
+                        )),
+                  ],
+                ),
+              ),
+
             ],
           ),
         ),
