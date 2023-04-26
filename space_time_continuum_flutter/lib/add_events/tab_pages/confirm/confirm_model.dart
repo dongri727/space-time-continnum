@@ -21,6 +21,7 @@ class ConfirmModel extends ChangeNotifier {
   String localDate = "";
 
   String place = "";
+  String att = "";
 
   final latitude = 0.0;
   final longitude = 0.0;
@@ -41,7 +42,7 @@ class ConfirmModel extends ChangeNotifier {
   late int historicalJourLastVal;
   late int historicalLocalDateLastVal;
   late int historicalPlaceLastVal;
-  late int historicalATTLastVal;
+  late int historicalAttLastVal;
   late int historicalLieuxLastVal;
 
   //insert into DB
@@ -86,23 +87,27 @@ class ConfirmModel extends ChangeNotifier {
       };
     }
 
-/*     addHistoricalPlaces() async {
-      var historicalPlaces = HistoricalPlaces(historical_id: historicalLastVal, place: place);
-      historicalLastValPlaceLastVal = await client.historicalPlaces.addHistoricalPlaces(historicalPlaces);
+    addHistoricalPlaces() async {
+      var historicalPlaces =
+          HistoricalPlaces(historical_id: historicalLastVal, place: place);
+      historicalPlaceLastVal =
+          await client.historicalPlaces.addHistoricalPlaces(historicalPlaces);
       <String, String?>{
         "place": confirm.place,
       };
-    } */
+    }
 
-/*     addHistoricalATTs() async {
-      var historicalATTs = HistoricalATTs(historical_id: historicalLastVal, att: att);
-      historicalATTLastVal = await client.historicalATTS.addHistoricalATTs(historicalATTs);
+    addHistoricalAtts() async {
+      var historicalAtts =
+          HistoricalAtts(historical_id: historicalLastVal, att: att);
+      historicalAttLastVal =
+          await client.historicalAtts.addHistoricalAtts(historicalAtts);
       <String, String?>{
         "att": confirm.att,
       };
-    } */
+    }
 
-/*     addHistoricalLieux() async {
+     addHistoricalLieux() async {
       var historicalLieux = HistoricalLieux(
         historical_id: historicalLastVal,
         latitude: latitude,
@@ -119,9 +124,9 @@ class ConfirmModel extends ChangeNotifier {
         dy: confirm.y,
         dz: confirm.z,
       };
-    } */
+    } 
 
-/*     //todo Listを入力するにはどうすればいいのか？
+/*     ///todo Listを入力するにはどうすればいいのか？
     addHistoricalPaysInvolved() async {
       var historicalPaysInvolved = HistoricalPaysInvolved(historical_id: historicalLastVal, countriesInvolved: countriesInvolved);
       historicalPaysInvolvedLastVal = await client.historicalPaysInvolved.addHistoricalPaysInvolved(historicalPaysInvolved);
@@ -186,17 +191,17 @@ class ConfirmModel extends ChangeNotifier {
         if (confirm.dateLocal != null) {
           addHistoricalLocalDates;
         }
-/*         //where
+        //where
         if (confirm.place != null) {
           addHistoricalPlaces();
         }
         if (confirm.att != null) {
-          addHistoricalATTs();
+          addHistoricalAtts();
         }
-        if (confirm.latitude != null) {
+         if (confirm.latitude != null) {
           addHistoricalLieux();
         }
-        //participantsA
+/*        //participantsA
         if (confirm.selectedPays.isNotEmpty) {
           addHistoricalPaysInvolved();
         }
@@ -216,8 +221,7 @@ class ConfirmModel extends ChangeNotifier {
         }
         if (confirm.selectedTerm.isNotEmpty){
           addHistoricalTerms();
-        }
- */
+        } */
         break;
       case 'BillionYears':
         //where

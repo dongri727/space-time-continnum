@@ -8,64 +8,39 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod/serverpod.dart' as _i1;
 
-class HistoricalLieux extends _i1.TableRow {
-  HistoricalLieux({
+class HistoricalAtts extends _i1.TableRow {
+  HistoricalAtts({
     int? id,
     required this.historical_id,
-    required this.latitude,
-    required this.longitude,
-    required this.three_d_x,
-    required this.three_d_y,
-    required this.three_d_z,
+    required this.att,
   }) : super(id);
 
-  factory HistoricalLieux.fromJson(
+  factory HistoricalAtts.fromJson(
     Map<String, dynamic> jsonSerialization,
     _i1.SerializationManager serializationManager,
   ) {
-    return HistoricalLieux(
+    return HistoricalAtts(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
       historical_id: serializationManager
           .deserialize<int>(jsonSerialization['historical_id']),
-      latitude: serializationManager
-          .deserialize<double>(jsonSerialization['latitude']),
-      longitude: serializationManager
-          .deserialize<double>(jsonSerialization['longitude']),
-      three_d_x: serializationManager
-          .deserialize<double>(jsonSerialization['three_d_x']),
-      three_d_y: serializationManager
-          .deserialize<double>(jsonSerialization['three_d_y']),
-      three_d_z: serializationManager
-          .deserialize<double>(jsonSerialization['three_d_z']),
+      att: serializationManager.deserialize<String>(jsonSerialization['att']),
     );
   }
 
-  static final t = HistoricalLieuxTable();
+  static final t = HistoricalAttsTable();
 
   int historical_id;
 
-  double latitude;
-
-  double longitude;
-
-  double three_d_x;
-
-  double three_d_y;
-
-  double three_d_z;
+  String att;
 
   @override
-  String get tableName => 'historical_lieux';
+  String get tableName => 'historical_atts';
   @override
   Map<String, dynamic> toJson() {
     return {
       'id': id,
       'historical_id': historical_id,
-      'latitude': latitude,
-      'longitude': longitude,
-      'three_d_x': three_d_x,
-      'three_d_y': three_d_y,
-      'three_d_z': three_d_z,
+      'att': att,
     };
   }
 
@@ -74,11 +49,7 @@ class HistoricalLieux extends _i1.TableRow {
     return {
       'id': id,
       'historical_id': historical_id,
-      'latitude': latitude,
-      'longitude': longitude,
-      'three_d_x': three_d_x,
-      'three_d_y': three_d_y,
-      'three_d_z': three_d_z,
+      'att': att,
     };
   }
 
@@ -87,11 +58,7 @@ class HistoricalLieux extends _i1.TableRow {
     return {
       'id': id,
       'historical_id': historical_id,
-      'latitude': latitude,
-      'longitude': longitude,
-      'three_d_x': three_d_x,
-      'three_d_y': three_d_y,
-      'three_d_z': three_d_z,
+      'att': att,
     };
   }
 
@@ -107,29 +74,17 @@ class HistoricalLieux extends _i1.TableRow {
       case 'historical_id':
         historical_id = value;
         return;
-      case 'latitude':
-        latitude = value;
-        return;
-      case 'longitude':
-        longitude = value;
-        return;
-      case 'three_d_x':
-        three_d_x = value;
-        return;
-      case 'three_d_y':
-        three_d_y = value;
-        return;
-      case 'three_d_z':
-        three_d_z = value;
+      case 'att':
+        att = value;
         return;
       default:
         throw UnimplementedError();
     }
   }
 
-  static Future<List<HistoricalLieux>> find(
+  static Future<List<HistoricalAtts>> find(
     _i1.Session session, {
-    HistoricalLieuxExpressionBuilder? where,
+    HistoricalAttsExpressionBuilder? where,
     int? limit,
     int? offset,
     _i1.Column? orderBy,
@@ -138,8 +93,8 @@ class HistoricalLieux extends _i1.TableRow {
     bool useCache = true,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.find<HistoricalLieux>(
-      where: where != null ? where(HistoricalLieux.t) : null,
+    return session.db.find<HistoricalAtts>(
+      where: where != null ? where(HistoricalAtts.t) : null,
       limit: limit,
       offset: offset,
       orderBy: orderBy,
@@ -150,17 +105,17 @@ class HistoricalLieux extends _i1.TableRow {
     );
   }
 
-  static Future<HistoricalLieux?> findSingleRow(
+  static Future<HistoricalAtts?> findSingleRow(
     _i1.Session session, {
-    HistoricalLieuxExpressionBuilder? where,
+    HistoricalAttsExpressionBuilder? where,
     int? offset,
     _i1.Column? orderBy,
     bool orderDescending = false,
     bool useCache = true,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.findSingleRow<HistoricalLieux>(
-      where: where != null ? where(HistoricalLieux.t) : null,
+    return session.db.findSingleRow<HistoricalAtts>(
+      where: where != null ? where(HistoricalAtts.t) : null,
       offset: offset,
       orderBy: orderBy,
       orderDescending: orderDescending,
@@ -169,27 +124,27 @@ class HistoricalLieux extends _i1.TableRow {
     );
   }
 
-  static Future<HistoricalLieux?> findById(
+  static Future<HistoricalAtts?> findById(
     _i1.Session session,
     int id,
   ) async {
-    return session.db.findById<HistoricalLieux>(id);
+    return session.db.findById<HistoricalAtts>(id);
   }
 
   static Future<int> delete(
     _i1.Session session, {
-    required HistoricalLieuxExpressionBuilder where,
+    required HistoricalAttsExpressionBuilder where,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.delete<HistoricalLieux>(
-      where: where(HistoricalLieux.t),
+    return session.db.delete<HistoricalAtts>(
+      where: where(HistoricalAtts.t),
       transaction: transaction,
     );
   }
 
   static Future<bool> deleteRow(
     _i1.Session session,
-    HistoricalLieux row, {
+    HistoricalAtts row, {
     _i1.Transaction? transaction,
   }) async {
     return session.db.deleteRow(
@@ -200,7 +155,7 @@ class HistoricalLieux extends _i1.TableRow {
 
   static Future<bool> update(
     _i1.Session session,
-    HistoricalLieux row, {
+    HistoricalAtts row, {
     _i1.Transaction? transaction,
   }) async {
     return session.db.update(
@@ -211,7 +166,7 @@ class HistoricalLieux extends _i1.TableRow {
 
   static Future<void> insert(
     _i1.Session session,
-    HistoricalLieux row, {
+    HistoricalAtts row, {
     _i1.Transaction? transaction,
   }) async {
     return session.db.insert(
@@ -222,13 +177,13 @@ class HistoricalLieux extends _i1.TableRow {
 
   static Future<int> count(
     _i1.Session session, {
-    HistoricalLieuxExpressionBuilder? where,
+    HistoricalAttsExpressionBuilder? where,
     int? limit,
     bool useCache = true,
     _i1.Transaction? transaction,
   }) async {
-    return session.db.count<HistoricalLieux>(
-      where: where != null ? where(HistoricalLieux.t) : null,
+    return session.db.count<HistoricalAtts>(
+      where: where != null ? where(HistoricalAtts.t) : null,
       limit: limit,
       useCache: useCache,
       transaction: transaction,
@@ -236,11 +191,11 @@ class HistoricalLieux extends _i1.TableRow {
   }
 }
 
-typedef HistoricalLieuxExpressionBuilder = _i1.Expression Function(
-    HistoricalLieuxTable);
+typedef HistoricalAttsExpressionBuilder = _i1.Expression Function(
+    HistoricalAttsTable);
 
-class HistoricalLieuxTable extends _i1.Table {
-  HistoricalLieuxTable() : super(tableName: 'historical_lieux');
+class HistoricalAttsTable extends _i1.Table {
+  HistoricalAttsTable() : super(tableName: 'historical_atts');
 
   /// The database id, set if the object has been inserted into the
   /// database or if it has been fetched from the database. Otherwise,
@@ -249,27 +204,15 @@ class HistoricalLieuxTable extends _i1.Table {
 
   final historical_id = _i1.ColumnInt('historical_id');
 
-  final latitude = _i1.ColumnDouble('latitude');
-
-  final longitude = _i1.ColumnDouble('longitude');
-
-  final three_d_x = _i1.ColumnDouble('three_d_x');
-
-  final three_d_y = _i1.ColumnDouble('three_d_y');
-
-  final three_d_z = _i1.ColumnDouble('three_d_z');
+  final att = _i1.ColumnString('att');
 
   @override
   List<_i1.Column> get columns => [
         id,
         historical_id,
-        latitude,
-        longitude,
-        three_d_x,
-        three_d_y,
-        three_d_z,
+        att,
       ];
 }
 
-@Deprecated('Use HistoricalLieuxTable.t instead.')
-HistoricalLieuxTable tHistoricalLieux = HistoricalLieuxTable();
+@Deprecated('Use HistoricalAttsTable.t instead.')
+HistoricalAttsTable tHistoricalAtts = HistoricalAttsTable();

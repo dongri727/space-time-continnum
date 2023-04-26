@@ -1,5 +1,5 @@
-class: Lieux
-table: lieux
+class: HistoricalLieux
+table: historical_lieux
 fields: 
   historical_id: int
   latitude: double

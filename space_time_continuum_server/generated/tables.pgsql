@@ -40,6 +40,20 @@ ALTER TABLE ONLY "historical"
 
 
 --
+-- Class HistoricalAtts as table historical_atts
+--
+
+CREATE TABLE "historical_atts" (
+  "id" serial,
+  "historical_id" integer NOT NULL,
+  "att" text NOT NULL
+);
+
+ALTER TABLE ONLY "historical_atts"
+  ADD CONSTRAINT historical_atts_pkey PRIMARY KEY (id);
+
+
+--
 -- Class HistoricalJours as table historical_jours
 --
 
@@ -51,6 +65,24 @@ CREATE TABLE "historical_jours" (
 
 ALTER TABLE ONLY "historical_jours"
   ADD CONSTRAINT historical_jours_pkey PRIMARY KEY (id);
+
+
+--
+-- Class HistoricalLieux as table historical_lieux
+--
+
+CREATE TABLE "historical_lieux" (
+  "id" serial,
+  "historical_id" integer NOT NULL,
+  "latitude" double precision NOT NULL,
+  "longitude" double precision NOT NULL,
+  "three_d_x" double precision NOT NULL,
+  "three_d_y" double precision NOT NULL,
+  "three_d_z" double precision NOT NULL
+);
+
+ALTER TABLE ONLY "historical_lieux"
+  ADD CONSTRAINT historical_lieux_pkey PRIMARY KEY (id);
 
 
 --
@@ -82,21 +114,17 @@ ALTER TABLE ONLY "historical_mois"
 
 
 --
--- Class Lieux as table lieux
+-- Class HistoricalPlaces as table historical_places
 --
 
-CREATE TABLE "lieux" (
+CREATE TABLE "historical_places" (
   "id" serial,
   "historical_id" integer NOT NULL,
-  "latitude" double precision NOT NULL,
-  "longitude" double precision NOT NULL,
-  "three_d_x" double precision NOT NULL,
-  "three_d_y" double precision NOT NULL,
-  "three_d_z" double precision NOT NULL
+  "place" text NOT NULL
 );
 
-ALTER TABLE ONLY "lieux"
-  ADD CONSTRAINT lieux_pkey PRIMARY KEY (id);
+ALTER TABLE ONLY "historical_places"
+  ADD CONSTRAINT historical_places_pkey PRIMARY KEY (id);
 
 
 --

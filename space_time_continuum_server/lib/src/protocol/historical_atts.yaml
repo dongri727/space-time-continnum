@@ -1,0 +1,5 @@
+class: HistoricalAtts
+table: historical_atts
+fields: 
+  historical_id: int
+  att: String

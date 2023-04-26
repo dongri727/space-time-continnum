@@ -1,0 +1,5 @@
+class: HistoricalPlaces
+table: historical_places
+fields: 
+  historical_id: int
+  place: String

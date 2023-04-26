@@ -8,35 +8,22 @@
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:serverpod_client/serverpod_client.dart' as _i1;
 
-class HistoricalLieux extends _i1.SerializableEntity {
-  HistoricalLieux({
+class HistoricalAtts extends _i1.SerializableEntity {
+  HistoricalAtts({
     this.id,
     required this.historical_id,
-    required this.latitude,
-    required this.longitude,
-    required this.three_d_x,
-    required this.three_d_y,
-    required this.three_d_z,
+    required this.att,
   });
 
-  factory HistoricalLieux.fromJson(
+  factory HistoricalAtts.fromJson(
     Map<String, dynamic> jsonSerialization,
     _i1.SerializationManager serializationManager,
   ) {
-    return HistoricalLieux(
+    return HistoricalAtts(
       id: serializationManager.deserialize<int?>(jsonSerialization['id']),
       historical_id: serializationManager
           .deserialize<int>(jsonSerialization['historical_id']),
-      latitude: serializationManager
-          .deserialize<double>(jsonSerialization['latitude']),
-      longitude: serializationManager
-          .deserialize<double>(jsonSerialization['longitude']),
-      three_d_x: serializationManager
-          .deserialize<double>(jsonSerialization['three_d_x']),
-      three_d_y: serializationManager
-          .deserialize<double>(jsonSerialization['three_d_y']),
-      three_d_z: serializationManager
-          .deserialize<double>(jsonSerialization['three_d_z']),
+      att: serializationManager.deserialize<String>(jsonSerialization['att']),
     );
   }
 
@@ -47,26 +34,14 @@ class HistoricalLieux extends _i1.SerializableEntity {
 
   int historical_id;
 
-  double latitude;
-
-  double longitude;
-
-  double three_d_x;
-
-  double three_d_y;
-
-  double three_d_z;
+  String att;
 
   @override
   Map<String, dynamic> toJson() {
     return {
       'id': id,
       'historical_id': historical_id,
-      'latitude': latitude,
-      'longitude': longitude,
-      'three_d_x': three_d_x,
-      'three_d_y': three_d_y,
-      'three_d_z': three_d_z,
+      'att': att,
     };
   }
 }

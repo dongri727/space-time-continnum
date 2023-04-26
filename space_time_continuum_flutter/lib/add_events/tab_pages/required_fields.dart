@@ -345,6 +345,31 @@ class _WhatPageState extends State<WhatPage> {
                               tffColor2: const Color(0x99e6e6fa),
                           )
                       ),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(50, 50, 50, 10),
+                        child: Text(
+                          style: SpaceTimeTheme.textTheme.bodyLarge,
+                          'Format',
+                        ),
+                      ),
+                      const HintText(
+                          hintText:
+                          '人類史以前のできごとについては、出来事とその出来事の発見を分けて登録してください。'),
+                      const HintText(
+                          hintText:
+                          '例えば'),
+                      const HintText(
+                          hintText:
+                          'ベルギーにイグアノドンがいた、ことはは○○万年前として登録し'),
+                      const HintText(
+                          hintText:
+                          'その発掘は○○年、発掘関係者等の記述も発掘側に登録してください。'),
+                      const HintText(
+                          hintText:
+                          'Ex: -766 (as Historical years) \n as The Ancient Olympic Game'),
+                      const HintText(
+                          hintText:
+                          'Ex: 1969 (as Historical years) as Apollo-11 was launched '),
 
                     ],
                   ),
