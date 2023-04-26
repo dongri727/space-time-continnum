@@ -44,6 +44,7 @@ class ConfirmModel extends ChangeNotifier {
   late int historicalPlaceLastVal;
   late int historicalAttLastVal;
   late int historicalLieuxLastVal;
+  late int historicalPaysInvolvedLastVal;
 
   //insert into DB
   Future<void> save(Confirm confirm) async {
@@ -107,7 +108,7 @@ class ConfirmModel extends ChangeNotifier {
       };
     }
 
-     addHistoricalLieux() async {
+    addHistoricalLieux() async {
       var historicalLieux = HistoricalLieux(
         historical_id: historicalLastVal,
         latitude: latitude,
@@ -116,7 +117,8 @@ class ConfirmModel extends ChangeNotifier {
         three_d_y: dy,
         three_d_z: dz,
       );
-      historicalLieuxLastVal = await client.historicalLieux.addHistoricalLieux(historicalLieux);
+      historicalLieuxLastVal =
+          await client.historicalLieux.addHistoricalLieux(historicalLieux);
       <double, double?>{
         latitude: confirm.latitude,
         longitude: confirm.longitude,
@@ -124,16 +126,18 @@ class ConfirmModel extends ChangeNotifier {
         dy: confirm.y,
         dz: confirm.z,
       };
-    } 
+    }
 
-/*     ///todo Listを入力するにはどうすればいいのか？
+    ///todo Listを入力するにはどうすればいいのか？
     addHistoricalPaysInvolved() async {
-      var historicalPaysInvolved = HistoricalPaysInvolved(historical_id: historicalLastVal, countriesInvolved: countriesInvolved);
-      historicalPaysInvolvedLastVal = await client.historicalPaysInvolved.addHistoricalPaysInvolved(historicalPaysInvolved);
+      var historicalPaysInvolved = HistoricalPaysInvolved(
+          historical_id: historicalLastVal, paysInvolved: countriesInvolved);
+      historicalPaysInvolvedLastVal = await client.historicalPaysInvolved
+          .addHistoricalPaysInvolved(historicalPaysInvolved);
       <List<String>, List<String>?>{
         countriesInvolved: confirm.selectedPays,
       };
-    } */
+    }
 
 /*     addHistoricalATTsInvolved() async {
       var historicalATTsInvolved = HistoricalATTsInvolved(historical_id: historicalLastVal, attsInvolved: attsInvolved);
@@ -198,14 +202,14 @@ class ConfirmModel extends ChangeNotifier {
         if (confirm.att != null) {
           addHistoricalAtts();
         }
-         if (confirm.latitude != null) {
+        if (confirm.latitude != null) {
           addHistoricalLieux();
         }
-/*        //participantsA
+        //participantsA
         if (confirm.selectedPays.isNotEmpty) {
           addHistoricalPaysInvolved();
         }
-        if (confirm.selectedATT.isNotEmpty) {
+/*        if (confirm.selectedATT.isNotEmpty) {
           addHistoricalATTsInvolved();
         }
         //participantsB

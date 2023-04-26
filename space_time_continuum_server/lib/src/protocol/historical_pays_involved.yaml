@@ -1,0 +1,5 @@
+class: HistoricalPaysInvolved
+table: historical_pays_involved
+fields: 
+  historical_id: int
+  paysInvolved: List

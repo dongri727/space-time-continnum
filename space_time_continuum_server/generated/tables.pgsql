@@ -114,6 +114,20 @@ ALTER TABLE ONLY "historical_mois"
 
 
 --
+-- Class HistoricalPaysInvolved as table historical_pays_involved
+--
+
+CREATE TABLE "historical_pays_involved" (
+  "id" serial,
+  "historical_id" integer NOT NULL,
+  "paysInvolved" json NOT NULL
+);
+
+ALTER TABLE ONLY "historical_pays_involved"
+  ADD CONSTRAINT historical_pays_involved_pkey PRIMARY KEY (id);
+
+
+--
 -- Class HistoricalPlaces as table historical_places
 --
 
