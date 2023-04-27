@@ -10,47 +10,56 @@ import 'package:serverpod/serverpod.dart' as _i1;
 import '../endpoints/at_that_time_endpoint.dart' as _i2;
 import '../endpoints/categories_endpoint.dart' as _i3;
 import '../endpoints/historical_atts_endpoint.dart' as _i4;
-import '../endpoints/historical_atts_involved.dart' as _i5;
-import '../endpoints/historical_endpoint.dart' as _i6;
-import '../endpoints/historical_jours_endpoint.dart' as _i7;
-import '../endpoints/historical_lieux_endpoint.dart' as _i8;
-import '../endpoints/historical_local_dates_endpoint.dart' as _i9;
-import '../endpoints/historical_mois_endpoint.dart' as _i10;
-import '../endpoints/historical_pays_involved_endpoint.dart' as _i11;
-import '../endpoints/historical_places_endpoint.dart' as _i12;
-import '../endpoints/organisations_endpoint.dart' as _i13;
-import '../endpoints/pays_endpoint.dart' as _i14;
-import '../endpoints/people_endpoints.dart' as _i15;
-import '../endpoints/places_endpoint.dart' as _i16;
-import '../endpoints/terms_endpoint.dart' as _i17;
+import '../endpoints/historical_atts_involved_endpoint.dart' as _i5;
+import '../endpoints/historical_categories_endpoint.dart' as _i6;
+import '../endpoints/historical_endpoint.dart' as _i7;
+import '../endpoints/historical_jours_endpoint.dart' as _i8;
+import '../endpoints/historical_lieux_endpoint.dart' as _i9;
+import '../endpoints/historical_local_dates_endpoint.dart' as _i10;
+import '../endpoints/historical_mois_endpoint.dart' as _i11;
+import '../endpoints/historical_orgs_endpoint.dart' as _i12;
+import '../endpoints/historical_pays_involved_endpoint.dart' as _i13;
+import '../endpoints/historical_people_endpoint.dart' as _i14;
+import '../endpoints/historical_places_endpoint.dart' as _i15;
+import '../endpoints/organisations_endpoint.dart' as _i16;
+import '../endpoints/pays_endpoint.dart' as _i17;
+import '../endpoints/people_endpoints.dart' as _i18;
+import '../endpoints/places_endpoint.dart' as _i19;
+import '../endpoints/terms_endpoint.dart' as _i20;
 import 'package:space_time_continuum_server/src/generated/at_that_time.dart'
-    as _i18;
-import 'package:space_time_continuum_server/src/generated/categories.dart'
-    as _i19;
-import 'package:space_time_continuum_server/src/generated/historical_atts.dart'
-    as _i20;
-import 'package:space_time_continuum_server/src/generated/historical_atts_involved.dart'
     as _i21;
-import 'package:space_time_continuum_server/src/generated/historical.dart'
+import 'package:space_time_continuum_server/src/generated/categories.dart'
     as _i22;
-import 'package:space_time_continuum_server/src/generated/historical_jours.dart'
+import 'package:space_time_continuum_server/src/generated/historical_atts.dart'
     as _i23;
-import 'package:space_time_continuum_server/src/generated/historical_lieux.dart'
+import 'package:space_time_continuum_server/src/generated/historical_atts_involved.dart'
     as _i24;
-import 'package:space_time_continuum_server/src/generated/historical_local_dates.dart'
+import 'package:space_time_continuum_server/src/generated/historical_categories.dart'
     as _i25;
-import 'package:space_time_continuum_server/src/generated/historical_mois.dart'
+import 'package:space_time_continuum_server/src/generated/historical.dart'
     as _i26;
-import 'package:space_time_continuum_server/src/generated/historical_pays_involved.dart'
+import 'package:space_time_continuum_server/src/generated/historical_jours.dart'
     as _i27;
-import 'package:space_time_continuum_server/src/generated/historical_places.dart'
+import 'package:space_time_continuum_server/src/generated/historical_lieux.dart'
     as _i28;
-import 'package:space_time_continuum_server/src/generated/organisations.dart'
+import 'package:space_time_continuum_server/src/generated/historical_local_dates.dart'
     as _i29;
-import 'package:space_time_continuum_server/src/generated/people.dart' as _i30;
-import 'package:space_time_continuum_server/src/generated/places.dart' as _i31;
-import 'package:space_time_continuum_server/src/generated/terms.dart' as _i32;
-import 'package:serverpod_auth_server/module.dart' as _i33;
+import 'package:space_time_continuum_server/src/generated/historical_mois.dart'
+    as _i30;
+import 'package:space_time_continuum_server/src/generated/historical_orgs.dart'
+    as _i31;
+import 'package:space_time_continuum_server/src/generated/historical_pays_involved.dart'
+    as _i32;
+import 'package:space_time_continuum_server/src/generated/historical_people.dart'
+    as _i33;
+import 'package:space_time_continuum_server/src/generated/historical_places.dart'
+    as _i34;
+import 'package:space_time_continuum_server/src/generated/organisations.dart'
+    as _i35;
+import 'package:space_time_continuum_server/src/generated/people.dart' as _i36;
+import 'package:space_time_continuum_server/src/generated/places.dart' as _i37;
+import 'package:space_time_continuum_server/src/generated/terms.dart' as _i38;
+import 'package:serverpod_auth_server/module.dart' as _i39;
 
 class Endpoints extends _i1.EndpointDispatch {
   @override
@@ -80,73 +89,91 @@ class Endpoints extends _i1.EndpointDispatch {
           'historicalAttsInvolved',
           null,
         ),
-      'historical': _i6.HistoricalEndpoint()
+      'historicalCategories': _i6.HistoricalCategoriesEndpoint()
+        ..initialize(
+          server,
+          'historicalCategories',
+          null,
+        ),
+      'historical': _i7.HistoricalEndpoint()
         ..initialize(
           server,
           'historical',
           null,
         ),
-      'historicalJours': _i7.HistoricalJoursEndpoint()
+      'historicalJours': _i8.HistoricalJoursEndpoint()
         ..initialize(
           server,
           'historicalJours',
           null,
         ),
-      'historicalLieux': _i8.HistoricalLieuxEndpoint()
+      'historicalLieux': _i9.HistoricalLieuxEndpoint()
         ..initialize(
           server,
           'historicalLieux',
           null,
         ),
-      'historicalLocalDates': _i9.HistoricalLocalDatesEndpoint()
+      'historicalLocalDates': _i10.HistoricalLocalDatesEndpoint()
         ..initialize(
           server,
           'historicalLocalDates',
           null,
         ),
-      'historicalMois': _i10.HistoricalMoisEndpoint()
+      'historicalMois': _i11.HistoricalMoisEndpoint()
         ..initialize(
           server,
           'historicalMois',
           null,
         ),
-      'historicalPaysInvolved': _i11.HistoricalPaysInvolvedEndpoint()
+      'historicalOrgs': _i12.HistoricalOrgsEndpoint()
+        ..initialize(
+          server,
+          'historicalOrgs',
+          null,
+        ),
+      'historicalPaysInvolved': _i13.HistoricalPaysInvolvedEndpoint()
         ..initialize(
           server,
           'historicalPaysInvolved',
           null,
         ),
-      'historicalPlaces': _i12.HistoricalPlacesEndpoint()
+      'historicalPeople': _i14.HistoricalPeopleEndpoint()
+        ..initialize(
+          server,
+          'historicalPeople',
+          null,
+        ),
+      'historicalPlaces': _i15.HistoricalPlacesEndpoint()
         ..initialize(
           server,
           'historicalPlaces',
           null,
         ),
-      'organisations': _i13.OrganisationsEndpoint()
+      'organisations': _i16.OrganisationsEndpoint()
         ..initialize(
           server,
           'organisations',
           null,
         ),
-      'pays': _i14.PaysEndpoint()
+      'pays': _i17.PaysEndpoint()
         ..initialize(
           server,
           'pays',
           null,
         ),
-      'people': _i15.PeopleEndpoint()
+      'people': _i18.PeopleEndpoint()
         ..initialize(
           server,
           'people',
           null,
         ),
-      'places': _i16.PlacesEndpoint()
+      'places': _i19.PlacesEndpoint()
         ..initialize(
           server,
           'places',
           null,
         ),
-      'terms': _i17.TermsEndpoint()
+      'terms': _i20.TermsEndpoint()
         ..initialize(
           server,
           'terms',
@@ -180,7 +207,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'atThatTime': _i1.ParameterDescription(
               name: 'atThatTime',
-              type: _i1.getType<_i18.AtThatTime>(),
+              type: _i1.getType<_i21.AtThatTime>(),
               nullable: false,
             )
           },
@@ -222,7 +249,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'categories': _i1.ParameterDescription(
               name: 'categories',
-              type: _i1.getType<_i19.Categories>(),
+              type: _i1.getType<_i22.Categories>(),
               nullable: false,
             )
           },
@@ -265,7 +292,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'historicalAtts': _i1.ParameterDescription(
               name: 'historicalAtts',
-              type: _i1.getType<_i20.HistoricalAtts>(),
+              type: _i1.getType<_i23.HistoricalAtts>(),
               nullable: false,
             )
           },
@@ -310,7 +337,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'historicalAttsInvolved': _i1.ParameterDescription(
               name: 'historicalAttsInvolved',
-              type: _i1.getType<_i21.HistoricalAttsInvolved>(),
+              type: _i1.getType<_i24.HistoricalAttsInvolved>(),
               nullable: false,
             )
           },
@@ -327,6 +354,52 @@ class Endpoints extends _i1.EndpointDispatch {
         ),
       },
     );
+    connectors['historicalCategories'] = _i1.EndpointConnector(
+      name: 'historicalCategories',
+      endpoint: endpoints['historicalCategories']!,
+      methodConnectors: {
+        'getHistoricalCategories': _i1.MethodConnector(
+          name: 'getHistoricalCategories',
+          params: {
+            'keyword': _i1.ParameterDescription(
+              name: 'keyword',
+              type: _i1.getType<String?>(),
+              nullable: true,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['historicalCategories']
+                      as _i6.HistoricalCategoriesEndpoint)
+                  .getHistoricalCategories(
+            session,
+            keyword: params['keyword'],
+          ),
+        ),
+        'addHistoricalCategories': _i1.MethodConnector(
+          name: 'addHistoricalCategories',
+          params: {
+            'historicalCategories': _i1.ParameterDescription(
+              name: 'historicalCategories',
+              type: _i1.getType<_i25.HistoricalCategories>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['historicalCategories']
+                      as _i6.HistoricalCategoriesEndpoint)
+                  .addHistoricalCategories(
+            session,
+            params['historicalCategories'],
+          ),
+        ),
+      },
+    );
     connectors['historical'] = _i1.EndpointConnector(
       name: 'historical',
       endpoint: endpoints['historical']!,
@@ -336,7 +409,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'historical': _i1.ParameterDescription(
               name: 'historical',
-              type: _i1.getType<_i22.Historical>(),
+              type: _i1.getType<_i26.Historical>(),
               nullable: false,
             )
           },
@@ -344,7 +417,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['historical'] as _i6.HistoricalEndpoint).addHistorical(
+              (endpoints['historical'] as _i7.HistoricalEndpoint).addHistorical(
             session,
             params['historical'],
           ),
@@ -368,7 +441,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['historicalJours'] as _i7.HistoricalJoursEndpoint)
+              (endpoints['historicalJours'] as _i8.HistoricalJoursEndpoint)
                   .getHistoricalJours(
             session,
             keyword: params['keyword'],
@@ -379,7 +452,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'historicalJours': _i1.ParameterDescription(
               name: 'historicalJours',
-              type: _i1.getType<_i23.HistoricalJours>(),
+              type: _i1.getType<_i27.HistoricalJours>(),
               nullable: false,
             )
           },
@@ -387,7 +460,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['historicalJours'] as _i7.HistoricalJoursEndpoint)
+              (endpoints['historicalJours'] as _i8.HistoricalJoursEndpoint)
                   .addHistoricalJours(
             session,
             params['historicalJours'],
@@ -412,7 +485,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['historicalLieux'] as _i8.HistoricalLieuxEndpoint)
+              (endpoints['historicalLieux'] as _i9.HistoricalLieuxEndpoint)
                   .getHistoricalLieux(
             session,
             keyword: params['keyword'],
@@ -423,7 +496,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'historicalLieux': _i1.ParameterDescription(
               name: 'historicalLieux',
-              type: _i1.getType<_i24.HistoricalLieux>(),
+              type: _i1.getType<_i28.HistoricalLieux>(),
               nullable: false,
             )
           },
@@ -431,7 +504,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['historicalLieux'] as _i8.HistoricalLieuxEndpoint)
+              (endpoints['historicalLieux'] as _i9.HistoricalLieuxEndpoint)
                   .addHistoricalLieux(
             session,
             params['historicalLieux'],
@@ -457,7 +530,7 @@ class Endpoints extends _i1.EndpointDispatch {
             Map<String, dynamic> params,
           ) async =>
               (endpoints['historicalLocalDates']
-                      as _i9.HistoricalLocalDatesEndpoint)
+                      as _i10.HistoricalLocalDatesEndpoint)
                   .getHistoricalLocalDtes(
             session,
             keyword: params['keyword'],
@@ -468,7 +541,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'historicalLocalDates': _i1.ParameterDescription(
               name: 'historicalLocalDates',
-              type: _i1.getType<_i25.HistoricalLocalDates>(),
+              type: _i1.getType<_i29.HistoricalLocalDates>(),
               nullable: false,
             )
           },
@@ -477,7 +550,7 @@ class Endpoints extends _i1.EndpointDispatch {
             Map<String, dynamic> params,
           ) async =>
               (endpoints['historicalLocalDates']
-                      as _i9.HistoricalLocalDatesEndpoint)
+                      as _i10.HistoricalLocalDatesEndpoint)
                   .addHistoricalLocalDates(
             session,
             params['historicalLocalDates'],
@@ -502,7 +575,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['historicalMois'] as _i10.HistoricalMoisEndpoint)
+              (endpoints['historicalMois'] as _i11.HistoricalMoisEndpoint)
                   .getHistoricalMois(
             session,
             keyword: params['keyword'],
@@ -513,7 +586,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'historicalMois': _i1.ParameterDescription(
               name: 'historicalMois',
-              type: _i1.getType<_i26.HistoricalMois>(),
+              type: _i1.getType<_i30.HistoricalMois>(),
               nullable: false,
             )
           },
@@ -521,10 +594,54 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['historicalMois'] as _i10.HistoricalMoisEndpoint)
+              (endpoints['historicalMois'] as _i11.HistoricalMoisEndpoint)
                   .addHistoricalMois(
             session,
             params['historicalMois'],
+          ),
+        ),
+      },
+    );
+    connectors['historicalOrgs'] = _i1.EndpointConnector(
+      name: 'historicalOrgs',
+      endpoint: endpoints['historicalOrgs']!,
+      methodConnectors: {
+        'getHistoricalOrgs': _i1.MethodConnector(
+          name: 'getHistoricalOrgs',
+          params: {
+            'keyword': _i1.ParameterDescription(
+              name: 'keyword',
+              type: _i1.getType<String?>(),
+              nullable: true,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['historicalOrgs'] as _i12.HistoricalOrgsEndpoint)
+                  .getHistoricalOrgs(
+            session,
+            keyword: params['keyword'],
+          ),
+        ),
+        'addHistoricalOrgs': _i1.MethodConnector(
+          name: 'addHistoricalOrgs',
+          params: {
+            'historicalOrgs': _i1.ParameterDescription(
+              name: 'historicalOrgs',
+              type: _i1.getType<_i31.HistoricalOrgs>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['historicalOrgs'] as _i12.HistoricalOrgsEndpoint)
+                  .addHistoricalOrgs(
+            session,
+            params['historicalOrgs'],
           ),
         ),
       },
@@ -547,7 +664,7 @@ class Endpoints extends _i1.EndpointDispatch {
             Map<String, dynamic> params,
           ) async =>
               (endpoints['historicalPaysInvolved']
-                      as _i11.HistoricalPaysInvolvedEndpoint)
+                      as _i13.HistoricalPaysInvolvedEndpoint)
                   .getHistoricalPaysInvolved(
             session,
             keyword: params['keyword'],
@@ -558,7 +675,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'historicalPaysInvolved': _i1.ParameterDescription(
               name: 'historicalPaysInvolved',
-              type: _i1.getType<_i27.HistoricalPaysInvolved>(),
+              type: _i1.getType<_i32.HistoricalPaysInvolved>(),
               nullable: false,
             )
           },
@@ -567,10 +684,54 @@ class Endpoints extends _i1.EndpointDispatch {
             Map<String, dynamic> params,
           ) async =>
               (endpoints['historicalPaysInvolved']
-                      as _i11.HistoricalPaysInvolvedEndpoint)
+                      as _i13.HistoricalPaysInvolvedEndpoint)
                   .addHistoricalPaysInvolved(
             session,
             params['historicalPaysInvolved'],
+          ),
+        ),
+      },
+    );
+    connectors['historicalPeople'] = _i1.EndpointConnector(
+      name: 'historicalPeople',
+      endpoint: endpoints['historicalPeople']!,
+      methodConnectors: {
+        'getHistoricalPeople': _i1.MethodConnector(
+          name: 'getHistoricalPeople',
+          params: {
+            'keyword': _i1.ParameterDescription(
+              name: 'keyword',
+              type: _i1.getType<String?>(),
+              nullable: true,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['historicalPeople'] as _i14.HistoricalPeopleEndpoint)
+                  .getHistoricalPeople(
+            session,
+            keyword: params['keyword'],
+          ),
+        ),
+        'addHistoricalPeople': _i1.MethodConnector(
+          name: 'addHistoricalPeople',
+          params: {
+            'historicalPeople': _i1.ParameterDescription(
+              name: 'historicalPeople',
+              type: _i1.getType<_i33.HistoricalPeople>(),
+              nullable: false,
+            )
+          },
+          call: (
+            _i1.Session session,
+            Map<String, dynamic> params,
+          ) async =>
+              (endpoints['historicalPeople'] as _i14.HistoricalPeopleEndpoint)
+                  .addHistoricalPeople(
+            session,
+            params['historicalPeople'],
           ),
         ),
       },
@@ -592,7 +753,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['historicalPlaces'] as _i12.HistoricalPlacesEndpoint)
+              (endpoints['historicalPlaces'] as _i15.HistoricalPlacesEndpoint)
                   .getHistoricalPlaces(
             session,
             keyword: params['keyword'],
@@ -603,7 +764,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'historicalPlaces': _i1.ParameterDescription(
               name: 'historicalPlaces',
-              type: _i1.getType<_i28.HistoricalPlaces>(),
+              type: _i1.getType<_i34.HistoricalPlaces>(),
               nullable: false,
             )
           },
@@ -611,7 +772,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['historicalPlaces'] as _i12.HistoricalPlacesEndpoint)
+              (endpoints['historicalPlaces'] as _i15.HistoricalPlacesEndpoint)
                   .addHistoricalPlaces(
             session,
             params['historicalPlaces'],
@@ -636,7 +797,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['organisations'] as _i13.OrganisationsEndpoint)
+              (endpoints['organisations'] as _i16.OrganisationsEndpoint)
                   .getOrganisations(
             session,
             keyword: params['keyword'],
@@ -647,7 +808,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'organisations': _i1.ParameterDescription(
               name: 'organisations',
-              type: _i1.getType<_i29.Organisations>(),
+              type: _i1.getType<_i35.Organisations>(),
               nullable: false,
             )
           },
@@ -655,7 +816,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['organisations'] as _i13.OrganisationsEndpoint)
+              (endpoints['organisations'] as _i16.OrganisationsEndpoint)
                   .addOrganisations(
             session,
             params['organisations'],
@@ -680,7 +841,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['pays'] as _i14.PaysEndpoint).getPays(
+              (endpoints['pays'] as _i17.PaysEndpoint).getPays(
             session,
             keyword: params['keyword'],
           ),
@@ -704,7 +865,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['people'] as _i15.PeopleEndpoint).getPeople(
+              (endpoints['people'] as _i18.PeopleEndpoint).getPeople(
             session,
             keyword: params['keyword'],
           ),
@@ -714,7 +875,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'people': _i1.ParameterDescription(
               name: 'people',
-              type: _i1.getType<_i30.People>(),
+              type: _i1.getType<_i36.People>(),
               nullable: false,
             )
           },
@@ -722,7 +883,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['people'] as _i15.PeopleEndpoint).addPeople(
+              (endpoints['people'] as _i18.PeopleEndpoint).addPeople(
             session,
             params['people'],
           ),
@@ -746,7 +907,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['places'] as _i16.PlacesEndpoint).getPlaces(
+              (endpoints['places'] as _i19.PlacesEndpoint).getPlaces(
             session,
             keyword: params['keyword'],
           ),
@@ -756,7 +917,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'places': _i1.ParameterDescription(
               name: 'places',
-              type: _i1.getType<_i31.Places>(),
+              type: _i1.getType<_i37.Places>(),
               nullable: false,
             )
           },
@@ -764,7 +925,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['places'] as _i16.PlacesEndpoint).addPlaces(
+              (endpoints['places'] as _i19.PlacesEndpoint).addPlaces(
             session,
             params['places'],
           ),
@@ -788,7 +949,7 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['terms'] as _i17.TermsEndpoint).getTerms(
+              (endpoints['terms'] as _i20.TermsEndpoint).getTerms(
             session,
             keyword: params['keyword'],
           ),
@@ -798,7 +959,7 @@ class Endpoints extends _i1.EndpointDispatch {
           params: {
             'terms': _i1.ParameterDescription(
               name: 'terms',
-              type: _i1.getType<_i32.Terms>(),
+              type: _i1.getType<_i38.Terms>(),
               nullable: false,
             )
           },
@@ -806,13 +967,13 @@ class Endpoints extends _i1.EndpointDispatch {
             _i1.Session session,
             Map<String, dynamic> params,
           ) async =>
-              (endpoints['terms'] as _i17.TermsEndpoint).addTerms(
+              (endpoints['terms'] as _i20.TermsEndpoint).addTerms(
             session,
             params['terms'],
           ),
         ),
       },
     );
-    modules['serverpod_auth'] = _i33.Endpoints()..initializeEndpoints(server);
+    modules['serverpod_auth'] = _i39.Endpoints()..initializeEndpoints(server);
   }
 }

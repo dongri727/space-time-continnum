@@ -46,6 +46,9 @@ class ConfirmModel extends ChangeNotifier {
   late int historicalLieuxLastVal;
   late int historicalPaysInvolvedLastVal;
   late int historicalAttsInvolvedLastVal;
+  late int historicalOrgsLastVal;
+  late int historicalPeopleLastVal;
+  late int historicalCategoriesLastVal;
 
   //insert into DB
   Future<void> save(Confirm confirm) async {
@@ -150,30 +153,36 @@ class ConfirmModel extends ChangeNotifier {
       };
     }
 
-/*     addHistoricalOrgs() async {
-      var historicalOrgs = HistoricalOrgs(historical_id: historicalLastVal, orgs: orgs);
-      historicalOrgLastVal = await client.historicalOrgs.addHistoricalOrgs(historicalOrgs);
+    addHistoricalOrgs() async {
+      var historicalOrgs =
+          HistoricalOrgs(historical_id: historicalLastVal, orgs: orgs);
+      historicalOrgsLastVal =
+          await client.historicalOrgs.addHistoricalOrgs(historicalOrgs);
       <List<String>, List<String>?>{
         orgs: confirm.selectedOrg,
       };
     }
- */
-/*     Future addHistoricalPeople() async {
-      var historicalPeople = HistoricalPeople(historical_id: historicalLastVal, people: people);
-      historicalPeopleLastVale = await client.historicalPeople.addHistoricalPeople(historicalPeople);
+
+    Future addHistoricalPeople() async {
+      var historicalPeople =
+          HistoricalPeople(historical_id: historicalLastVal, people: people);
+      historicalPeopleLastVal =
+          await client.historicalPeople.addHistoricalPeople(historicalPeople);
       <List<String>, List<String>?>{
         people: confirm.selectedWho,
       };
     }
- */
-/*     Future addHistoricalCategories() async {
-      var historicalCategories = HistoricalCategories(historica_id: historicalLastVal, categories: categories);
-      hisoricalCategoriesLastVal = await client.historicalCategories.addHistoricalCategories(historicalCategories);
+
+    Future addHistoricalCategories() async {
+      var historicalCategories = HistoricalCategories(
+          historical_id: historicalLastVal, categories: categories);
+      historicalCategoriesLastVal = await client.historicalCategories
+          .addHistoricalCategories(historicalCategories);
       <List<String>, List<String>?>{
         categories: confirm.selectedCategory,
       };
     }
- */
+
 /*     Future addHistoricalTerms() async {
       var historicalTerms = HistoricalTerms(historical_id: historicalLastVal, terms: terms);
       historicalTermsLastVal = await client.historicalTerms.addHistoricalTerms(historicalTerms);
@@ -215,18 +224,18 @@ class ConfirmModel extends ChangeNotifier {
         if (confirm.selectedATT.isNotEmpty) {
           addHistoricalAttsInvolved();
         }
-/*        //participantsB
+        //participantsB
         if (confirm.selectedOrg.isNotEmpty) {
           addHistoricalOrgs();
         }
-        if(confirm.selectedWho.isNotEmpty) {
+        if (confirm.selectedWho.isNotEmpty) {
           addHistoricalPeople();
         }
         //terms
         if(confirm.selectedCategory.isNotEmpty){
           addHistoricalCategories();
         }
-        if (confirm.selectedTerm.isNotEmpty){
+/*        if (confirm.selectedTerm.isNotEmpty){
           addHistoricalTerms();
         } */
         break;

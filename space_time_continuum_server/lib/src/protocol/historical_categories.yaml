@@ -1,0 +1,5 @@
+class: HistoricalCategories
+table: historical_categories
+fields: 
+  historical_id: int
+  categories: List

@@ -83,6 +83,20 @@ ALTER TABLE ONLY "historical_atts_involved"
 
 
 --
+-- Class HistoricalCategories as table historical_categories
+--
+
+CREATE TABLE "historical_categories" (
+  "id" serial,
+  "historical_id" integer NOT NULL,
+  "categories" json NOT NULL
+);
+
+ALTER TABLE ONLY "historical_categories"
+  ADD CONSTRAINT historical_categories_pkey PRIMARY KEY (id);
+
+
+--
 -- Class HistoricalJours as table historical_jours
 --
 
@@ -143,6 +157,20 @@ ALTER TABLE ONLY "historical_mois"
 
 
 --
+-- Class HistoricalOrgs as table historical_orgs
+--
+
+CREATE TABLE "historical_orgs" (
+  "id" serial,
+  "historical_id" integer NOT NULL,
+  "orgs" json NOT NULL
+);
+
+ALTER TABLE ONLY "historical_orgs"
+  ADD CONSTRAINT historical_orgs_pkey PRIMARY KEY (id);
+
+
+--
 -- Class HistoricalPaysInvolved as table historical_pays_involved
 --
 
@@ -154,6 +182,20 @@ CREATE TABLE "historical_pays_involved" (
 
 ALTER TABLE ONLY "historical_pays_involved"
   ADD CONSTRAINT historical_pays_involved_pkey PRIMARY KEY (id);
+
+
+--
+-- Class HistoricalPeople as table historical_people
+--
+
+CREATE TABLE "historical_people" (
+  "id" serial,
+  "historical_id" integer NOT NULL,
+  "people" json NOT NULL
+);
+
+ALTER TABLE ONLY "historical_people"
+  ADD CONSTRAINT historical_people_pkey PRIMARY KEY (id);
 
 
 --

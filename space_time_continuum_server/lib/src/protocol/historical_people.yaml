@@ -1,0 +1,5 @@
+class: HistoricalPeople
+table: historical_people
+fields: 
+  historical_id: int
+  people: List

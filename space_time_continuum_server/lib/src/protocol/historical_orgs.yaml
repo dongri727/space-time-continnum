@@ -1,0 +1,5 @@
+class: HistoricalOrgs
+table: historical_orgs
+fields: 
+  historical_id: int
+  orgs: List
