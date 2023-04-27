@@ -12,6 +12,21 @@ ALTER TABLE ONLY "atts"
 
 
 --
+-- Class Billion as table billion
+--
+
+CREATE TABLE "billion" (
+  "id" serial,
+  "annee" double precision NOT NULL,
+  "affair" text NOT NULL,
+  "pays" text NOT NULL
+);
+
+ALTER TABLE ONLY "billion"
+  ADD CONSTRAINT billion_pkey PRIMARY KEY (id);
+
+
+--
 -- Class Categories as table categories
 --
 
@@ -51,6 +66,20 @@ CREATE TABLE "historical_atts" (
 
 ALTER TABLE ONLY "historical_atts"
   ADD CONSTRAINT historical_atts_pkey PRIMARY KEY (id);
+
+
+--
+-- Class HistoricalAttsInvolved as table historical_atts_involved
+--
+
+CREATE TABLE "historical_atts_involved" (
+  "id" serial,
+  "historical_id" integer NOT NULL,
+  "atts" json NOT NULL
+);
+
+ALTER TABLE ONLY "historical_atts_involved"
+  ADD CONSTRAINT historical_atts_involved_pkey PRIMARY KEY (id);
 
 
 --

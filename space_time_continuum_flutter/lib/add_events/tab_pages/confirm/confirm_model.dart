@@ -45,6 +45,7 @@ class ConfirmModel extends ChangeNotifier {
   late int historicalAttLastVal;
   late int historicalLieuxLastVal;
   late int historicalPaysInvolvedLastVal;
+  late int historicalAttsInvolvedLastVal;
 
   //insert into DB
   Future<void> save(Confirm confirm) async {
@@ -139,14 +140,16 @@ class ConfirmModel extends ChangeNotifier {
       };
     }
 
-/*     addHistoricalATTsInvolved() async {
-      var historicalATTsInvolved = HistoricalATTsInvolved(historical_id: historicalLastVal, attsInvolved: attsInvolved);
-      historicalATTInvolvedLastVal = await client.historicalATTsInvolved.addHistoricalATTsinvolved(historicalATTsInvolved);
+    addHistoricalAttsInvolved() async {
+      var historicalAttsInvolved = HistoricalAttsInvolved(
+          historical_id: historicalLastVal, atts: attsInvolved);
+      historicalAttsInvolvedLastVal = await client.historicalAttsInvolved
+          .addHistoricalAttsInvolved(historicalAttsInvolved);
       <List<String>, List<String>?>{
         attsInvolved: confirm.selectedATT,
       };
     }
- */
+
 /*     addHistoricalOrgs() async {
       var historicalOrgs = HistoricalOrgs(historical_id: historicalLastVal, orgs: orgs);
       historicalOrgLastVal = await client.historicalOrgs.addHistoricalOrgs(historicalOrgs);
@@ -209,10 +212,10 @@ class ConfirmModel extends ChangeNotifier {
         if (confirm.selectedPays.isNotEmpty) {
           addHistoricalPaysInvolved();
         }
-/*        if (confirm.selectedATT.isNotEmpty) {
-          addHistoricalATTsInvolved();
+        if (confirm.selectedATT.isNotEmpty) {
+          addHistoricalAttsInvolved();
         }
-        //participantsB
+/*        //participantsB
         if (confirm.selectedOrg.isNotEmpty) {
           addHistoricalOrgs();
         }

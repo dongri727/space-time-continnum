@@ -1,0 +1,5 @@
+class: HistoricalAttsInvolved
+table: historical_atts_involved
+fields: 
+  historical_id: int
+  atts: List

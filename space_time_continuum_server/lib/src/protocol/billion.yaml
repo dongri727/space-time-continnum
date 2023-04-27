@@ -1,0 +1,6 @@
+class: Billion
+table: billion
+fields: 
+  annee: double
+  affair: String
+  pays: String
