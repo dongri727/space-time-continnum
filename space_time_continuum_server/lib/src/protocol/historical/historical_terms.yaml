@@ -1,0 +1,5 @@
+class: HistoricalTerms
+table: historical_terms
+fields: 
+  historical_id: int
+  terms: List

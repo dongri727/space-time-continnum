@@ -1,0 +1,5 @@
+class: BillionPlaces
+table: billion_places
+fields: 
+  billion_id: int
+  place: String

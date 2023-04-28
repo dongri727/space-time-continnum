@@ -49,10 +49,12 @@ class ConfirmModel extends ChangeNotifier {
   late int historicalOrgsLastVal;
   late int historicalPeopleLastVal;
   late int historicalCategoriesLastVal;
+  late int historicalTermsLastVal;
+  late int billionLastVal;
 
   //insert into DB
   Future<void> save(Confirm confirm) async {
-    addHistorical() async {
+    Future addHistorical() async {
       var historical = Historical(annee: annee, affair: affair, pays: pays);
       historicalLastVal = await client.historical.addHistorical(historical);
       <String, dynamic>{
@@ -183,14 +185,25 @@ class ConfirmModel extends ChangeNotifier {
       };
     }
 
-/*     Future addHistoricalTerms() async {
-      var historicalTerms = HistoricalTerms(historical_id: historicalLastVal, terms: terms);
-      historicalTermsLastVal = await client.historicalTerms.addHistoricalTerms(historicalTerms);
+    Future addHistoricalTerms() async {
+      var historicalTerms =
+          HistoricalTerms(historical_id: historicalLastVal, terms: terms);
+      historicalTermsLastVal =
+          await client.historicalTerms.addHistoricalTerms(historicalTerms);
       <List<String>, List<String>?>{
         terms: confirm.selectedTerm,
       };
     }
- */
+
+    Future addBillion() async {
+      var billion = Billion(annee: annee, affair: affair, pays: pays);
+      billionLastVal = await client.billion.addBillion(billion);
+      <String, dynamic>{
+        "annee": confirm.year,
+        "affair": confirm.name,
+        "pays": confirm.country,
+      };
+    }
 
     //addLocation()
 
@@ -232,14 +245,15 @@ class ConfirmModel extends ChangeNotifier {
           addHistoricalPeople();
         }
         //terms
-        if(confirm.selectedCategory.isNotEmpty){
+        if (confirm.selectedCategory.isNotEmpty) {
           addHistoricalCategories();
         }
-/*        if (confirm.selectedTerm.isNotEmpty){
+        if (confirm.selectedTerm.isNotEmpty) {
           addHistoricalTerms();
-        } */
+        }
         break;
       case 'BillionYears':
+        addBillion;
         //where
         if (confirm.place != null) {
 /*           addBillionPlaces();

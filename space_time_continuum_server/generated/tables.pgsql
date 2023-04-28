@@ -27,6 +27,20 @@ ALTER TABLE ONLY "billion"
 
 
 --
+-- Class BillionPlaces as table billion_places
+--
+
+CREATE TABLE "billion_places" (
+  "id" serial,
+  "billion_id" integer NOT NULL,
+  "place" text NOT NULL
+);
+
+ALTER TABLE ONLY "billion_places"
+  ADD CONSTRAINT billion_places_pkey PRIMARY KEY (id);
+
+
+--
 -- Class Categories as table categories
 --
 
@@ -210,6 +224,20 @@ CREATE TABLE "historical_places" (
 
 ALTER TABLE ONLY "historical_places"
   ADD CONSTRAINT historical_places_pkey PRIMARY KEY (id);
+
+
+--
+-- Class HistoricalTerms as table historical_terms
+--
+
+CREATE TABLE "historical_terms" (
+  "id" serial,
+  "historical_id" integer NOT NULL,
+  "terms" json NOT NULL
+);
+
+ALTER TABLE ONLY "historical_terms"
+  ADD CONSTRAINT historical_terms_pkey PRIMARY KEY (id);
 
 
 --
