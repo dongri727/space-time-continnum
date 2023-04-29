@@ -1,0 +1,5 @@
+class: BillionTerms
+table: billion_terms
+fields: 
+  billion_id: int
+  terms: List

@@ -12,65 +12,77 @@ import 'package:serverpod/protocol.dart' as _i2;
 import 'package:serverpod_auth_server/module.dart' as _i3;
 import 'at_that_time.dart' as _i4;
 import 'billion.dart' as _i5;
-import 'billion/billion_places.dart' as _i6;
-import 'categories.dart' as _i7;
-import 'historical.dart' as _i8;
-import 'historical/historical_atts.dart' as _i9;
-import 'historical/historical_atts_involved.dart' as _i10;
-import 'historical/historical_categories.dart' as _i11;
-import 'historical/historical_jours.dart' as _i12;
-import 'historical/historical_lieux.dart' as _i13;
-import 'historical/historical_local_dates.dart' as _i14;
-import 'historical/historical_mois.dart' as _i15;
-import 'historical/historical_orgs.dart' as _i16;
-import 'historical/historical_pays_involved.dart' as _i17;
-import 'historical/historical_people.dart' as _i18;
-import 'historical/historical_places.dart' as _i19;
-import 'historical/historical_terms.dart' as _i20;
-import 'organisations.dart' as _i21;
-import 'pays.dart' as _i22;
-import 'people.dart' as _i23;
-import 'places.dart' as _i24;
-import 'terms.dart' as _i25;
+import 'billion/billion_categories.dart' as _i6;
+import 'billion/billion_lieux.dart' as _i7;
+import 'billion/billion_places.dart' as _i8;
+import 'billion/billion_terms.dart' as _i9;
+import 'categories.dart' as _i10;
+import 'historical.dart' as _i11;
+import 'historical/historical_atts.dart' as _i12;
+import 'historical/historical_atts_involved.dart' as _i13;
+import 'historical/historical_categories.dart' as _i14;
+import 'historical/historical_jours.dart' as _i15;
+import 'historical/historical_lieux.dart' as _i16;
+import 'historical/historical_local_dates.dart' as _i17;
+import 'historical/historical_mois.dart' as _i18;
+import 'historical/historical_orgs.dart' as _i19;
+import 'historical/historical_pays_involved.dart' as _i20;
+import 'historical/historical_people.dart' as _i21;
+import 'historical/historical_places.dart' as _i22;
+import 'historical/historical_terms.dart' as _i23;
+import 'organisations.dart' as _i24;
+import 'pays.dart' as _i25;
+import 'people.dart' as _i26;
+import 'places.dart' as _i27;
+import 'terms.dart' as _i28;
 import 'package:space_time_continuum_server/src/generated/at_that_time.dart'
-    as _i26;
-import 'package:space_time_continuum_server/src/generated/billion/billion_places.dart'
-    as _i27;
-import 'package:space_time_continuum_server/src/generated/categories.dart'
-    as _i28;
-import 'package:space_time_continuum_server/src/generated/historical/historical_atts.dart'
     as _i29;
-import 'package:space_time_continuum_server/src/generated/historical/historical_atts_involved.dart'
+import 'package:space_time_continuum_server/src/generated/billion/billion_categories.dart'
     as _i30;
-import 'package:space_time_continuum_server/src/generated/historical/historical_categories.dart'
+import 'package:space_time_continuum_server/src/generated/billion/billion_lieux.dart'
     as _i31;
-import 'package:space_time_continuum_server/src/generated/historical/historical_jours.dart'
+import 'package:space_time_continuum_server/src/generated/billion/billion_places.dart'
     as _i32;
-import 'package:space_time_continuum_server/src/generated/historical/historical_lieux.dart'
+import 'package:space_time_continuum_server/src/generated/billion/billion_terms.dart'
     as _i33;
-import 'package:space_time_continuum_server/src/generated/historical/historical_local_dates.dart'
+import 'package:space_time_continuum_server/src/generated/categories.dart'
     as _i34;
-import 'package:space_time_continuum_server/src/generated/historical/historical_mois.dart'
+import 'package:space_time_continuum_server/src/generated/historical/historical_atts.dart'
     as _i35;
-import 'package:space_time_continuum_server/src/generated/historical/historical_orgs.dart'
+import 'package:space_time_continuum_server/src/generated/historical/historical_atts_involved.dart'
     as _i36;
-import 'package:space_time_continuum_server/src/generated/historical/historical_pays_involved.dart'
+import 'package:space_time_continuum_server/src/generated/historical/historical_categories.dart'
     as _i37;
-import 'package:space_time_continuum_server/src/generated/historical/historical_people.dart'
+import 'package:space_time_continuum_server/src/generated/historical/historical_jours.dart'
     as _i38;
-import 'package:space_time_continuum_server/src/generated/historical/historical_places.dart'
+import 'package:space_time_continuum_server/src/generated/historical/historical_lieux.dart'
     as _i39;
-import 'package:space_time_continuum_server/src/generated/historical/historical_terms.dart'
+import 'package:space_time_continuum_server/src/generated/historical/historical_local_dates.dart'
     as _i40;
-import 'package:space_time_continuum_server/src/generated/organisations.dart'
+import 'package:space_time_continuum_server/src/generated/historical/historical_mois.dart'
     as _i41;
-import 'package:space_time_continuum_server/src/generated/pays.dart' as _i42;
-import 'package:space_time_continuum_server/src/generated/people.dart' as _i43;
-import 'package:space_time_continuum_server/src/generated/places.dart' as _i44;
-import 'package:space_time_continuum_server/src/generated/terms.dart' as _i45;
+import 'package:space_time_continuum_server/src/generated/historical/historical_orgs.dart'
+    as _i42;
+import 'package:space_time_continuum_server/src/generated/historical/historical_pays_involved.dart'
+    as _i43;
+import 'package:space_time_continuum_server/src/generated/historical/historical_people.dart'
+    as _i44;
+import 'package:space_time_continuum_server/src/generated/historical/historical_places.dart'
+    as _i45;
+import 'package:space_time_continuum_server/src/generated/historical/historical_terms.dart'
+    as _i46;
+import 'package:space_time_continuum_server/src/generated/organisations.dart'
+    as _i47;
+import 'package:space_time_continuum_server/src/generated/pays.dart' as _i48;
+import 'package:space_time_continuum_server/src/generated/people.dart' as _i49;
+import 'package:space_time_continuum_server/src/generated/places.dart' as _i50;
+import 'package:space_time_continuum_server/src/generated/terms.dart' as _i51;
 export 'at_that_time.dart';
 export 'billion.dart';
+export 'billion/billion_categories.dart';
+export 'billion/billion_lieux.dart';
 export 'billion/billion_places.dart';
+export 'billion/billion_terms.dart';
 export 'categories.dart';
 export 'historical.dart';
 export 'historical/historical_atts.dart';
@@ -186,6 +198,114 @@ class Protocol extends _i1.SerializationManagerServer {
       managed: true,
     ),
     _i2.TableDefinition(
+      name: 'billion_categories',
+      schema: 'public',
+      columns: [
+        _i2.ColumnDefinition(
+          name: 'id',
+          columnType: _i2.ColumnType.integer,
+          isNullable: false,
+          dartType: 'int?',
+          columnDefault: 'nextval(\'billion_categories_id_seq\'::regclass)',
+        ),
+        _i2.ColumnDefinition(
+          name: 'billion_id',
+          columnType: _i2.ColumnType.integer,
+          isNullable: false,
+          dartType: 'int',
+        ),
+        _i2.ColumnDefinition(
+          name: 'categories',
+          columnType: _i2.ColumnType.json,
+          isNullable: false,
+          dartType: 'List',
+        ),
+      ],
+      foreignKeys: [],
+      indexes: [
+        _i2.IndexDefinition(
+          indexName: 'billion_categories_pkey',
+          tableSpace: null,
+          elements: [
+            _i2.IndexElementDefinition(
+              type: _i2.IndexElementDefinitionType.column,
+              definition: 'id',
+            )
+          ],
+          type: 'btree',
+          isUnique: true,
+          isPrimary: true,
+        )
+      ],
+      managed: true,
+    ),
+    _i2.TableDefinition(
+      name: 'billion_lieux',
+      schema: 'public',
+      columns: [
+        _i2.ColumnDefinition(
+          name: 'id',
+          columnType: _i2.ColumnType.integer,
+          isNullable: false,
+          dartType: 'int?',
+          columnDefault: 'nextval(\'billion_lieux_id_seq\'::regclass)',
+        ),
+        _i2.ColumnDefinition(
+          name: 'billion_id',
+          columnType: _i2.ColumnType.integer,
+          isNullable: false,
+          dartType: 'int',
+        ),
+        _i2.ColumnDefinition(
+          name: 'latitude',
+          columnType: _i2.ColumnType.doublePrecision,
+          isNullable: false,
+          dartType: 'double',
+        ),
+        _i2.ColumnDefinition(
+          name: 'longitude',
+          columnType: _i2.ColumnType.doublePrecision,
+          isNullable: false,
+          dartType: 'double',
+        ),
+        _i2.ColumnDefinition(
+          name: 'three_d_x',
+          columnType: _i2.ColumnType.doublePrecision,
+          isNullable: false,
+          dartType: 'double',
+        ),
+        _i2.ColumnDefinition(
+          name: 'three_d_y',
+          columnType: _i2.ColumnType.doublePrecision,
+          isNullable: false,
+          dartType: 'double',
+        ),
+        _i2.ColumnDefinition(
+          name: 'three_d_z',
+          columnType: _i2.ColumnType.doublePrecision,
+          isNullable: false,
+          dartType: 'double',
+        ),
+      ],
+      foreignKeys: [],
+      indexes: [
+        _i2.IndexDefinition(
+          indexName: 'billion_lieux_pkey',
+          tableSpace: null,
+          elements: [
+            _i2.IndexElementDefinition(
+              type: _i2.IndexElementDefinitionType.column,
+              definition: 'id',
+            )
+          ],
+          type: 'btree',
+          isUnique: true,
+          isPrimary: true,
+        )
+      ],
+      managed: true,
+    ),
+    _i2.TableDefinition(
       name: 'billion_places',
       schema: 'public',
       columns: [
@@ -213,6 +333,48 @@ class Protocol extends _i1.SerializationManagerServer {
       indexes: [
         _i2.IndexDefinition(
           indexName: 'billion_places_pkey',
+          tableSpace: null,
+          elements: [
+            _i2.IndexElementDefinition(
+              type: _i2.IndexElementDefinitionType.column,
+              definition: 'id',
+            )
+          ],
+          type: 'btree',
+          isUnique: true,
+          isPrimary: true,
+        )
+      ],
+      managed: true,
+    ),
+    _i2.TableDefinition(
+      name: 'billion_terms',
+      schema: 'public',
+      columns: [
+        _i2.ColumnDefinition(
+          name: 'id',
+          columnType: _i2.ColumnType.integer,
+          isNullable: false,
+          dartType: 'int?',
+          columnDefault: 'nextval(\'billion_terms_id_seq\'::regclass)',
+        ),
+        _i2.ColumnDefinition(
+          name: 'billion_id',
+          columnType: _i2.ColumnType.integer,
+          isNullable: false,
+          dartType: 'int',
+        ),
+        _i2.ColumnDefinition(
+          name: 'terms',
+          columnType: _i2.ColumnType.json,
+          isNullable: false,
+          dartType: 'List',
+        ),
+      ],
+      foreignKeys: [],
+      indexes: [
+        _i2.IndexDefinition(
+          indexName: 'billion_terms_pkey',
           tableSpace: null,
           elements: [
             _i2.IndexElementDefinition(
@@ -1064,65 +1226,74 @@ class Protocol extends _i1.SerializationManagerServer {
     if (t == _i5.Billion) {
       return _i5.Billion.fromJson(data, this) as T;
     }
-    if (t == _i6.BillionPlaces) {
-      return _i6.BillionPlaces.fromJson(data, this) as T;
+    if (t == _i6.BillionCategories) {
+      return _i6.BillionCategories.fromJson(data, this) as T;
     }
-    if (t == _i7.Categories) {
-      return _i7.Categories.fromJson(data, this) as T;
+    if (t == _i7.BillionLieux) {
+      return _i7.BillionLieux.fromJson(data, this) as T;
     }
-    if (t == _i8.Historical) {
-      return _i8.Historical.fromJson(data, this) as T;
+    if (t == _i8.BillionPlaces) {
+      return _i8.BillionPlaces.fromJson(data, this) as T;
     }
-    if (t == _i9.HistoricalAtts) {
-      return _i9.HistoricalAtts.fromJson(data, this) as T;
+    if (t == _i9.BillionTerms) {
+      return _i9.BillionTerms.fromJson(data, this) as T;
     }
-    if (t == _i10.HistoricalAttsInvolved) {
-      return _i10.HistoricalAttsInvolved.fromJson(data, this) as T;
+    if (t == _i10.Categories) {
+      return _i10.Categories.fromJson(data, this) as T;
     }
-    if (t == _i11.HistoricalCategories) {
-      return _i11.HistoricalCategories.fromJson(data, this) as T;
+    if (t == _i11.Historical) {
+      return _i11.Historical.fromJson(data, this) as T;
     }
-    if (t == _i12.HistoricalJours) {
-      return _i12.HistoricalJours.fromJson(data, this) as T;
+    if (t == _i12.HistoricalAtts) {
+      return _i12.HistoricalAtts.fromJson(data, this) as T;
     }
-    if (t == _i13.HistoricalLieux) {
-      return _i13.HistoricalLieux.fromJson(data, this) as T;
+    if (t == _i13.HistoricalAttsInvolved) {
+      return _i13.HistoricalAttsInvolved.fromJson(data, this) as T;
     }
-    if (t == _i14.HistoricalLocalDates) {
-      return _i14.HistoricalLocalDates.fromJson(data, this) as T;
+    if (t == _i14.HistoricalCategories) {
+      return _i14.HistoricalCategories.fromJson(data, this) as T;
     }
-    if (t == _i15.HistoricalMois) {
-      return _i15.HistoricalMois.fromJson(data, this) as T;
+    if (t == _i15.HistoricalJours) {
+      return _i15.HistoricalJours.fromJson(data, this) as T;
     }
-    if (t == _i16.HistoricalOrgs) {
-      return _i16.HistoricalOrgs.fromJson(data, this) as T;
+    if (t == _i16.HistoricalLieux) {
+      return _i16.HistoricalLieux.fromJson(data, this) as T;
     }
-    if (t == _i17.HistoricalPaysInvolved) {
-      return _i17.HistoricalPaysInvolved.fromJson(data, this) as T;
+    if (t == _i17.HistoricalLocalDates) {
+      return _i17.HistoricalLocalDates.fromJson(data, this) as T;
     }
-    if (t == _i18.HistoricalPeople) {
-      return _i18.HistoricalPeople.fromJson(data, this) as T;
+    if (t == _i18.HistoricalMois) {
+      return _i18.HistoricalMois.fromJson(data, this) as T;
     }
-    if (t == _i19.HistoricalPlaces) {
-      return _i19.HistoricalPlaces.fromJson(data, this) as T;
+    if (t == _i19.HistoricalOrgs) {
+      return _i19.HistoricalOrgs.fromJson(data, this) as T;
     }
-    if (t == _i20.HistoricalTerms) {
-      return _i20.HistoricalTerms.fromJson(data, this) as T;
+    if (t == _i20.HistoricalPaysInvolved) {
+      return _i20.HistoricalPaysInvolved.fromJson(data, this) as T;
     }
-    if (t == _i21.Organisations) {
-      return _i21.Organisations.fromJson(data, this) as T;
+    if (t == _i21.HistoricalPeople) {
+      return _i21.HistoricalPeople.fromJson(data, this) as T;
     }
-    if (t == _i22.Pays) {
-      return _i22.Pays.fromJson(data, this) as T;
+    if (t == _i22.HistoricalPlaces) {
+      return _i22.HistoricalPlaces.fromJson(data, this) as T;
     }
-    if (t == _i23.People) {
-      return _i23.People.fromJson(data, this) as T;
+    if (t == _i23.HistoricalTerms) {
+      return _i23.HistoricalTerms.fromJson(data, this) as T;
     }
-    if (t == _i24.Places) {
-      return _i24.Places.fromJson(data, this) as T;
+    if (t == _i24.Organisations) {
+      return _i24.Organisations.fromJson(data, this) as T;
     }
-    if (t == _i25.Terms) {
-      return _i25.Terms.fromJson(data, this) as T;
+    if (t == _i25.Pays) {
+      return _i25.Pays.fromJson(data, this) as T;
+    }
+    if (t == _i26.People) {
+      return _i26.People.fromJson(data, this) as T;
+    }
+    if (t == _i27.Places) {
+      return _i27.Places.fromJson(data, this) as T;
+    }
+    if (t == _i28.Terms) {
+      return _i28.Terms.fromJson(data, this) as T;
     }
     if (t == _i1.getType<_i4.AtThatTime?>()) {
       return (data != null ? _i4.AtThatTime.fromJson(data, this) : null) as T;
@@ -1130,176 +1301,201 @@ class Protocol extends _i1.SerializationManagerServer {
     if (t == _i1.getType<_i5.Billion?>()) {
       return (data != null ? _i5.Billion.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i6.BillionPlaces?>()) {
-      return (data != null ? _i6.BillionPlaces.fromJson(data, this) : null)
+    if (t == _i1.getType<_i6.BillionCategories?>()) {
+      return (data != null ? _i6.BillionCategories.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i7.Categories?>()) {
-      return (data != null ? _i7.Categories.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i7.BillionLieux?>()) {
+      return (data != null ? _i7.BillionLieux.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i8.Historical?>()) {
-      return (data != null ? _i8.Historical.fromJson(data, this) : null) as T;
-    }
-    if (t == _i1.getType<_i9.HistoricalAtts?>()) {
-      return (data != null ? _i9.HistoricalAtts.fromJson(data, this) : null)
+    if (t == _i1.getType<_i8.BillionPlaces?>()) {
+      return (data != null ? _i8.BillionPlaces.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i10.HistoricalAttsInvolved?>()) {
+    if (t == _i1.getType<_i9.BillionTerms?>()) {
+      return (data != null ? _i9.BillionTerms.fromJson(data, this) : null) as T;
+    }
+    if (t == _i1.getType<_i10.Categories?>()) {
+      return (data != null ? _i10.Categories.fromJson(data, this) : null) as T;
+    }
+    if (t == _i1.getType<_i11.Historical?>()) {
+      return (data != null ? _i11.Historical.fromJson(data, this) : null) as T;
+    }
+    if (t == _i1.getType<_i12.HistoricalAtts?>()) {
+      return (data != null ? _i12.HistoricalAtts.fromJson(data, this) : null)
+          as T;
+    }
+    if (t == _i1.getType<_i13.HistoricalAttsInvolved?>()) {
       return (data != null
-          ? _i10.HistoricalAttsInvolved.fromJson(data, this)
+          ? _i13.HistoricalAttsInvolved.fromJson(data, this)
           : null) as T;
     }
-    if (t == _i1.getType<_i11.HistoricalCategories?>()) {
+    if (t == _i1.getType<_i14.HistoricalCategories?>()) {
       return (data != null
-          ? _i11.HistoricalCategories.fromJson(data, this)
+          ? _i14.HistoricalCategories.fromJson(data, this)
           : null) as T;
     }
-    if (t == _i1.getType<_i12.HistoricalJours?>()) {
-      return (data != null ? _i12.HistoricalJours.fromJson(data, this) : null)
+    if (t == _i1.getType<_i15.HistoricalJours?>()) {
+      return (data != null ? _i15.HistoricalJours.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i13.HistoricalLieux?>()) {
-      return (data != null ? _i13.HistoricalLieux.fromJson(data, this) : null)
+    if (t == _i1.getType<_i16.HistoricalLieux?>()) {
+      return (data != null ? _i16.HistoricalLieux.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i14.HistoricalLocalDates?>()) {
+    if (t == _i1.getType<_i17.HistoricalLocalDates?>()) {
       return (data != null
-          ? _i14.HistoricalLocalDates.fromJson(data, this)
+          ? _i17.HistoricalLocalDates.fromJson(data, this)
           : null) as T;
     }
-    if (t == _i1.getType<_i15.HistoricalMois?>()) {
-      return (data != null ? _i15.HistoricalMois.fromJson(data, this) : null)
+    if (t == _i1.getType<_i18.HistoricalMois?>()) {
+      return (data != null ? _i18.HistoricalMois.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i16.HistoricalOrgs?>()) {
-      return (data != null ? _i16.HistoricalOrgs.fromJson(data, this) : null)
+    if (t == _i1.getType<_i19.HistoricalOrgs?>()) {
+      return (data != null ? _i19.HistoricalOrgs.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i17.HistoricalPaysInvolved?>()) {
+    if (t == _i1.getType<_i20.HistoricalPaysInvolved?>()) {
       return (data != null
-          ? _i17.HistoricalPaysInvolved.fromJson(data, this)
+          ? _i20.HistoricalPaysInvolved.fromJson(data, this)
           : null) as T;
     }
-    if (t == _i1.getType<_i18.HistoricalPeople?>()) {
-      return (data != null ? _i18.HistoricalPeople.fromJson(data, this) : null)
+    if (t == _i1.getType<_i21.HistoricalPeople?>()) {
+      return (data != null ? _i21.HistoricalPeople.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i19.HistoricalPlaces?>()) {
-      return (data != null ? _i19.HistoricalPlaces.fromJson(data, this) : null)
+    if (t == _i1.getType<_i22.HistoricalPlaces?>()) {
+      return (data != null ? _i22.HistoricalPlaces.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i20.HistoricalTerms?>()) {
-      return (data != null ? _i20.HistoricalTerms.fromJson(data, this) : null)
+    if (t == _i1.getType<_i23.HistoricalTerms?>()) {
+      return (data != null ? _i23.HistoricalTerms.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i21.Organisations?>()) {
-      return (data != null ? _i21.Organisations.fromJson(data, this) : null)
+    if (t == _i1.getType<_i24.Organisations?>()) {
+      return (data != null ? _i24.Organisations.fromJson(data, this) : null)
           as T;
     }
-    if (t == _i1.getType<_i22.Pays?>()) {
-      return (data != null ? _i22.Pays.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i25.Pays?>()) {
+      return (data != null ? _i25.Pays.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i23.People?>()) {
-      return (data != null ? _i23.People.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i26.People?>()) {
+      return (data != null ? _i26.People.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i24.Places?>()) {
-      return (data != null ? _i24.Places.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i27.Places?>()) {
+      return (data != null ? _i27.Places.fromJson(data, this) : null) as T;
     }
-    if (t == _i1.getType<_i25.Terms?>()) {
-      return (data != null ? _i25.Terms.fromJson(data, this) : null) as T;
+    if (t == _i1.getType<_i28.Terms?>()) {
+      return (data != null ? _i28.Terms.fromJson(data, this) : null) as T;
     }
-    if (t == List<_i26.AtThatTime>) {
-      return (data as List).map((e) => deserialize<_i26.AtThatTime>(e)).toList()
+    if (t == List<_i29.AtThatTime>) {
+      return (data as List).map((e) => deserialize<_i29.AtThatTime>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i27.BillionPlaces>) {
+    if (t == List<_i30.BillionCategories>) {
       return (data as List)
-          .map((e) => deserialize<_i27.BillionPlaces>(e))
+          .map((e) => deserialize<_i30.BillionCategories>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i28.Categories>) {
-      return (data as List).map((e) => deserialize<_i28.Categories>(e)).toList()
+    if (t == List<_i31.BillionLieux>) {
+      return (data as List)
+          .map((e) => deserialize<_i31.BillionLieux>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i32.BillionPlaces>) {
+      return (data as List)
+          .map((e) => deserialize<_i32.BillionPlaces>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i33.BillionTerms>) {
+      return (data as List)
+          .map((e) => deserialize<_i33.BillionTerms>(e))
+          .toList() as dynamic;
+    }
+    if (t == List<_i34.Categories>) {
+      return (data as List).map((e) => deserialize<_i34.Categories>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i29.HistoricalAtts>) {
+    if (t == List<_i35.HistoricalAtts>) {
       return (data as List)
-          .map((e) => deserialize<_i29.HistoricalAtts>(e))
+          .map((e) => deserialize<_i35.HistoricalAtts>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i30.HistoricalAttsInvolved>) {
+    if (t == List<_i36.HistoricalAttsInvolved>) {
       return (data as List)
-          .map((e) => deserialize<_i30.HistoricalAttsInvolved>(e))
+          .map((e) => deserialize<_i36.HistoricalAttsInvolved>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i31.HistoricalCategories>) {
+    if (t == List<_i37.HistoricalCategories>) {
       return (data as List)
-          .map((e) => deserialize<_i31.HistoricalCategories>(e))
+          .map((e) => deserialize<_i37.HistoricalCategories>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i32.HistoricalJours>) {
+    if (t == List<_i38.HistoricalJours>) {
       return (data as List)
-          .map((e) => deserialize<_i32.HistoricalJours>(e))
+          .map((e) => deserialize<_i38.HistoricalJours>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i33.HistoricalLieux>) {
+    if (t == List<_i39.HistoricalLieux>) {
       return (data as List)
-          .map((e) => deserialize<_i33.HistoricalLieux>(e))
+          .map((e) => deserialize<_i39.HistoricalLieux>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i34.HistoricalLocalDates>) {
+    if (t == List<_i40.HistoricalLocalDates>) {
       return (data as List)
-          .map((e) => deserialize<_i34.HistoricalLocalDates>(e))
+          .map((e) => deserialize<_i40.HistoricalLocalDates>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i35.HistoricalMois>) {
+    if (t == List<_i41.HistoricalMois>) {
       return (data as List)
-          .map((e) => deserialize<_i35.HistoricalMois>(e))
+          .map((e) => deserialize<_i41.HistoricalMois>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i36.HistoricalOrgs>) {
+    if (t == List<_i42.HistoricalOrgs>) {
       return (data as List)
-          .map((e) => deserialize<_i36.HistoricalOrgs>(e))
+          .map((e) => deserialize<_i42.HistoricalOrgs>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i37.HistoricalPaysInvolved>) {
+    if (t == List<_i43.HistoricalPaysInvolved>) {
       return (data as List)
-          .map((e) => deserialize<_i37.HistoricalPaysInvolved>(e))
+          .map((e) => deserialize<_i43.HistoricalPaysInvolved>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i38.HistoricalPeople>) {
+    if (t == List<_i44.HistoricalPeople>) {
       return (data as List)
-          .map((e) => deserialize<_i38.HistoricalPeople>(e))
+          .map((e) => deserialize<_i44.HistoricalPeople>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i39.HistoricalPlaces>) {
+    if (t == List<_i45.HistoricalPlaces>) {
       return (data as List)
-          .map((e) => deserialize<_i39.HistoricalPlaces>(e))
+          .map((e) => deserialize<_i45.HistoricalPlaces>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i40.HistoricalTerms>) {
+    if (t == List<_i46.HistoricalTerms>) {
       return (data as List)
-          .map((e) => deserialize<_i40.HistoricalTerms>(e))
+          .map((e) => deserialize<_i46.HistoricalTerms>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i41.Organisations>) {
+    if (t == List<_i47.Organisations>) {
       return (data as List)
-          .map((e) => deserialize<_i41.Organisations>(e))
+          .map((e) => deserialize<_i47.Organisations>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i42.Pays>) {
-      return (data as List).map((e) => deserialize<_i42.Pays>(e)).toList()
+    if (t == List<_i48.Pays>) {
+      return (data as List).map((e) => deserialize<_i48.Pays>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i43.People>) {
-      return (data as List).map((e) => deserialize<_i43.People>(e)).toList()
+    if (t == List<_i49.People>) {
+      return (data as List).map((e) => deserialize<_i49.People>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i44.Places>) {
-      return (data as List).map((e) => deserialize<_i44.Places>(e)).toList()
+    if (t == List<_i50.Places>) {
+      return (data as List).map((e) => deserialize<_i50.Places>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i45.Terms>) {
-      return (data as List).map((e) => deserialize<_i45.Terms>(e)).toList()
+    if (t == List<_i51.Terms>) {
+      return (data as List).map((e) => deserialize<_i51.Terms>(e)).toList()
           as dynamic;
     }
     try {
@@ -1324,64 +1520,73 @@ class Protocol extends _i1.SerializationManagerServer {
     if (data is _i5.Billion) {
       return 'Billion';
     }
-    if (data is _i6.BillionPlaces) {
+    if (data is _i6.BillionCategories) {
+      return 'BillionCategories';
+    }
+    if (data is _i7.BillionLieux) {
+      return 'BillionLieux';
+    }
+    if (data is _i8.BillionPlaces) {
       return 'BillionPlaces';
     }
-    if (data is _i7.Categories) {
+    if (data is _i9.BillionTerms) {
+      return 'BillionTerms';
+    }
+    if (data is _i10.Categories) {
       return 'Categories';
     }
-    if (data is _i8.Historical) {
+    if (data is _i11.Historical) {
       return 'Historical';
     }
-    if (data is _i9.HistoricalAtts) {
+    if (data is _i12.HistoricalAtts) {
       return 'HistoricalAtts';
     }
-    if (data is _i10.HistoricalAttsInvolved) {
+    if (data is _i13.HistoricalAttsInvolved) {
       return 'HistoricalAttsInvolved';
     }
-    if (data is _i11.HistoricalCategories) {
+    if (data is _i14.HistoricalCategories) {
       return 'HistoricalCategories';
     }
-    if (data is _i12.HistoricalJours) {
+    if (data is _i15.HistoricalJours) {
       return 'HistoricalJours';
     }
-    if (data is _i13.HistoricalLieux) {
+    if (data is _i16.HistoricalLieux) {
       return 'HistoricalLieux';
     }
-    if (data is _i14.HistoricalLocalDates) {
+    if (data is _i17.HistoricalLocalDates) {
       return 'HistoricalLocalDates';
     }
-    if (data is _i15.HistoricalMois) {
+    if (data is _i18.HistoricalMois) {
       return 'HistoricalMois';
     }
-    if (data is _i16.HistoricalOrgs) {
+    if (data is _i19.HistoricalOrgs) {
       return 'HistoricalOrgs';
     }
-    if (data is _i17.HistoricalPaysInvolved) {
+    if (data is _i20.HistoricalPaysInvolved) {
       return 'HistoricalPaysInvolved';
     }
-    if (data is _i18.HistoricalPeople) {
+    if (data is _i21.HistoricalPeople) {
       return 'HistoricalPeople';
     }
-    if (data is _i19.HistoricalPlaces) {
+    if (data is _i22.HistoricalPlaces) {
       return 'HistoricalPlaces';
     }
-    if (data is _i20.HistoricalTerms) {
+    if (data is _i23.HistoricalTerms) {
       return 'HistoricalTerms';
     }
-    if (data is _i21.Organisations) {
+    if (data is _i24.Organisations) {
       return 'Organisations';
     }
-    if (data is _i22.Pays) {
+    if (data is _i25.Pays) {
       return 'Pays';
     }
-    if (data is _i23.People) {
+    if (data is _i26.People) {
       return 'People';
     }
-    if (data is _i24.Places) {
+    if (data is _i27.Places) {
       return 'Places';
     }
-    if (data is _i25.Terms) {
+    if (data is _i28.Terms) {
       return 'Terms';
     }
     return super.getClassNameForObject(data);
@@ -1399,65 +1604,74 @@ class Protocol extends _i1.SerializationManagerServer {
     if (data['className'] == 'Billion') {
       return deserialize<_i5.Billion>(data['data']);
     }
+    if (data['className'] == 'BillionCategories') {
+      return deserialize<_i6.BillionCategories>(data['data']);
+    }
+    if (data['className'] == 'BillionLieux') {
+      return deserialize<_i7.BillionLieux>(data['data']);
+    }
     if (data['className'] == 'BillionPlaces') {
-      return deserialize<_i6.BillionPlaces>(data['data']);
+      return deserialize<_i8.BillionPlaces>(data['data']);
+    }
+    if (data['className'] == 'BillionTerms') {
+      return deserialize<_i9.BillionTerms>(data['data']);
     }
     if (data['className'] == 'Categories') {
-      return deserialize<_i7.Categories>(data['data']);
+      return deserialize<_i10.Categories>(data['data']);
     }
     if (data['className'] == 'Historical') {
-      return deserialize<_i8.Historical>(data['data']);
+      return deserialize<_i11.Historical>(data['data']);
     }
     if (data['className'] == 'HistoricalAtts') {
-      return deserialize<_i9.HistoricalAtts>(data['data']);
+      return deserialize<_i12.HistoricalAtts>(data['data']);
     }
     if (data['className'] == 'HistoricalAttsInvolved') {
-      return deserialize<_i10.HistoricalAttsInvolved>(data['data']);
+      return deserialize<_i13.HistoricalAttsInvolved>(data['data']);
     }
     if (data['className'] == 'HistoricalCategories') {
-      return deserialize<_i11.HistoricalCategories>(data['data']);
+      return deserialize<_i14.HistoricalCategories>(data['data']);
     }
     if (data['className'] == 'HistoricalJours') {
-      return deserialize<_i12.HistoricalJours>(data['data']);
+      return deserialize<_i15.HistoricalJours>(data['data']);
     }
     if (data['className'] == 'HistoricalLieux') {
-      return deserialize<_i13.HistoricalLieux>(data['data']);
+      return deserialize<_i16.HistoricalLieux>(data['data']);
     }
     if (data['className'] == 'HistoricalLocalDates') {
-      return deserialize<_i14.HistoricalLocalDates>(data['data']);
+      return deserialize<_i17.HistoricalLocalDates>(data['data']);
     }
     if (data['className'] == 'HistoricalMois') {
-      return deserialize<_i15.HistoricalMois>(data['data']);
+      return deserialize<_i18.HistoricalMois>(data['data']);
     }
     if (data['className'] == 'HistoricalOrgs') {
-      return deserialize<_i16.HistoricalOrgs>(data['data']);
+      return deserialize<_i19.HistoricalOrgs>(data['data']);
     }
     if (data['className'] == 'HistoricalPaysInvolved') {
-      return deserialize<_i17.HistoricalPaysInvolved>(data['data']);
+      return deserialize<_i20.HistoricalPaysInvolved>(data['data']);
     }
     if (data['className'] == 'HistoricalPeople') {
-      return deserialize<_i18.HistoricalPeople>(data['data']);
+      return deserialize<_i21.HistoricalPeople>(data['data']);
     }
     if (data['className'] == 'HistoricalPlaces') {
-      return deserialize<_i19.HistoricalPlaces>(data['data']);
+      return deserialize<_i22.HistoricalPlaces>(data['data']);
     }
     if (data['className'] == 'HistoricalTerms') {
-      return deserialize<_i20.HistoricalTerms>(data['data']);
+      return deserialize<_i23.HistoricalTerms>(data['data']);
     }
     if (data['className'] == 'Organisations') {
-      return deserialize<_i21.Organisations>(data['data']);
+      return deserialize<_i24.Organisations>(data['data']);
     }
     if (data['className'] == 'Pays') {
-      return deserialize<_i22.Pays>(data['data']);
+      return deserialize<_i25.Pays>(data['data']);
     }
     if (data['className'] == 'People') {
-      return deserialize<_i23.People>(data['data']);
+      return deserialize<_i26.People>(data['data']);
     }
     if (data['className'] == 'Places') {
-      return deserialize<_i24.Places>(data['data']);
+      return deserialize<_i27.Places>(data['data']);
     }
     if (data['className'] == 'Terms') {
-      return deserialize<_i25.Terms>(data['data']);
+      return deserialize<_i28.Terms>(data['data']);
     }
     return super.deserializeByClassName(data);
   }
@@ -1481,46 +1695,52 @@ class Protocol extends _i1.SerializationManagerServer {
         return _i4.AtThatTime.t;
       case _i5.Billion:
         return _i5.Billion.t;
-      case _i6.BillionPlaces:
-        return _i6.BillionPlaces.t;
-      case _i7.Categories:
-        return _i7.Categories.t;
-      case _i8.Historical:
-        return _i8.Historical.t;
-      case _i9.HistoricalAtts:
-        return _i9.HistoricalAtts.t;
-      case _i10.HistoricalAttsInvolved:
-        return _i10.HistoricalAttsInvolved.t;
-      case _i11.HistoricalCategories:
-        return _i11.HistoricalCategories.t;
-      case _i12.HistoricalJours:
-        return _i12.HistoricalJours.t;
-      case _i13.HistoricalLieux:
-        return _i13.HistoricalLieux.t;
-      case _i14.HistoricalLocalDates:
-        return _i14.HistoricalLocalDates.t;
-      case _i15.HistoricalMois:
-        return _i15.HistoricalMois.t;
-      case _i16.HistoricalOrgs:
-        return _i16.HistoricalOrgs.t;
-      case _i17.HistoricalPaysInvolved:
-        return _i17.HistoricalPaysInvolved.t;
-      case _i18.HistoricalPeople:
-        return _i18.HistoricalPeople.t;
-      case _i19.HistoricalPlaces:
-        return _i19.HistoricalPlaces.t;
-      case _i20.HistoricalTerms:
-        return _i20.HistoricalTerms.t;
-      case _i21.Organisations:
-        return _i21.Organisations.t;
-      case _i22.Pays:
-        return _i22.Pays.t;
-      case _i23.People:
-        return _i23.People.t;
-      case _i24.Places:
-        return _i24.Places.t;
-      case _i25.Terms:
-        return _i25.Terms.t;
+      case _i6.BillionCategories:
+        return _i6.BillionCategories.t;
+      case _i7.BillionLieux:
+        return _i7.BillionLieux.t;
+      case _i8.BillionPlaces:
+        return _i8.BillionPlaces.t;
+      case _i9.BillionTerms:
+        return _i9.BillionTerms.t;
+      case _i10.Categories:
+        return _i10.Categories.t;
+      case _i11.Historical:
+        return _i11.Historical.t;
+      case _i12.HistoricalAtts:
+        return _i12.HistoricalAtts.t;
+      case _i13.HistoricalAttsInvolved:
+        return _i13.HistoricalAttsInvolved.t;
+      case _i14.HistoricalCategories:
+        return _i14.HistoricalCategories.t;
+      case _i15.HistoricalJours:
+        return _i15.HistoricalJours.t;
+      case _i16.HistoricalLieux:
+        return _i16.HistoricalLieux.t;
+      case _i17.HistoricalLocalDates:
+        return _i17.HistoricalLocalDates.t;
+      case _i18.HistoricalMois:
+        return _i18.HistoricalMois.t;
+      case _i19.HistoricalOrgs:
+        return _i19.HistoricalOrgs.t;
+      case _i20.HistoricalPaysInvolved:
+        return _i20.HistoricalPaysInvolved.t;
+      case _i21.HistoricalPeople:
+        return _i21.HistoricalPeople.t;
+      case _i22.HistoricalPlaces:
+        return _i22.HistoricalPlaces.t;
+      case _i23.HistoricalTerms:
+        return _i23.HistoricalTerms.t;
+      case _i24.Organisations:
+        return _i24.Organisations.t;
+      case _i25.Pays:
+        return _i25.Pays.t;
+      case _i26.People:
+        return _i26.People.t;
+      case _i27.Places:
+        return _i27.Places.t;
+      case _i28.Terms:
+        return _i28.Terms.t;
     }
     return null;
   }

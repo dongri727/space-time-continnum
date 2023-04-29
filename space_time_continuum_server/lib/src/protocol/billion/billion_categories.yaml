@@ -1,0 +1,5 @@
+class: BillionCategories
+table: billion_categories
+fields: 
+  billion_id: int
+  categories: List

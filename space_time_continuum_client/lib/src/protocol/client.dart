@@ -10,46 +10,52 @@ import 'package:serverpod_client/serverpod_client.dart' as _i1;
 import 'dart:async' as _i2;
 import 'package:space_time_continuum_client/src/protocol/at_that_time.dart'
     as _i3;
-import 'package:space_time_continuum_client/src/protocol/billion/billion_places.dart'
+import 'package:space_time_continuum_client/src/protocol/billion/billion_categories.dart'
     as _i4;
-import 'package:space_time_continuum_client/src/protocol/billion.dart' as _i5;
-import 'package:space_time_continuum_client/src/protocol/categories.dart'
+import 'package:space_time_continuum_client/src/protocol/billion/billion_lieux.dart'
+    as _i5;
+import 'package:space_time_continuum_client/src/protocol/billion/billion_places.dart'
     as _i6;
-import 'package:space_time_continuum_client/src/protocol/historical/historical_atts.dart'
+import 'package:space_time_continuum_client/src/protocol/billion/billion_terms.dart'
     as _i7;
-import 'package:space_time_continuum_client/src/protocol/historical/historical_atts_involved.dart'
-    as _i8;
-import 'package:space_time_continuum_client/src/protocol/historical/historical_categories.dart'
+import 'package:space_time_continuum_client/src/protocol/billion.dart' as _i8;
+import 'package:space_time_continuum_client/src/protocol/categories.dart'
     as _i9;
-import 'package:space_time_continuum_client/src/protocol/historical/historical_jours.dart'
+import 'package:space_time_continuum_client/src/protocol/historical/historical_atts.dart'
     as _i10;
-import 'package:space_time_continuum_client/src/protocol/historical/historical_lieux.dart'
+import 'package:space_time_continuum_client/src/protocol/historical/historical_atts_involved.dart'
     as _i11;
-import 'package:space_time_continuum_client/src/protocol/historical/historical_local_dates.dart'
+import 'package:space_time_continuum_client/src/protocol/historical/historical_categories.dart'
     as _i12;
-import 'package:space_time_continuum_client/src/protocol/historical/historical_mois.dart'
+import 'package:space_time_continuum_client/src/protocol/historical/historical_jours.dart'
     as _i13;
-import 'package:space_time_continuum_client/src/protocol/historical/historical_orgs.dart'
+import 'package:space_time_continuum_client/src/protocol/historical/historical_lieux.dart'
     as _i14;
-import 'package:space_time_continuum_client/src/protocol/historical/historical_pays_involved.dart'
+import 'package:space_time_continuum_client/src/protocol/historical/historical_local_dates.dart'
     as _i15;
-import 'package:space_time_continuum_client/src/protocol/historical/historical_people.dart'
+import 'package:space_time_continuum_client/src/protocol/historical/historical_mois.dart'
     as _i16;
-import 'package:space_time_continuum_client/src/protocol/historical/historical_places.dart'
+import 'package:space_time_continuum_client/src/protocol/historical/historical_orgs.dart'
     as _i17;
-import 'package:space_time_continuum_client/src/protocol/historical/historical_terms.dart'
+import 'package:space_time_continuum_client/src/protocol/historical/historical_pays_involved.dart'
     as _i18;
-import 'package:space_time_continuum_client/src/protocol/historical.dart'
+import 'package:space_time_continuum_client/src/protocol/historical/historical_people.dart'
     as _i19;
-import 'package:space_time_continuum_client/src/protocol/organisations.dart'
+import 'package:space_time_continuum_client/src/protocol/historical/historical_places.dart'
     as _i20;
-import 'package:space_time_continuum_client/src/protocol/pays.dart' as _i21;
-import 'package:space_time_continuum_client/src/protocol/people.dart' as _i22;
-import 'package:space_time_continuum_client/src/protocol/places.dart' as _i23;
-import 'package:space_time_continuum_client/src/protocol/terms.dart' as _i24;
-import 'package:serverpod_auth_client/module.dart' as _i25;
-import 'dart:io' as _i26;
-import 'protocol.dart' as _i27;
+import 'package:space_time_continuum_client/src/protocol/historical/historical_terms.dart'
+    as _i21;
+import 'package:space_time_continuum_client/src/protocol/historical.dart'
+    as _i22;
+import 'package:space_time_continuum_client/src/protocol/organisations.dart'
+    as _i23;
+import 'package:space_time_continuum_client/src/protocol/pays.dart' as _i24;
+import 'package:space_time_continuum_client/src/protocol/people.dart' as _i25;
+import 'package:space_time_continuum_client/src/protocol/places.dart' as _i26;
+import 'package:space_time_continuum_client/src/protocol/terms.dart' as _i27;
+import 'package:serverpod_auth_client/module.dart' as _i28;
+import 'dart:io' as _i29;
+import 'protocol.dart' as _i30;
 
 class _EndpointAtThatTime extends _i1.EndpointRef {
   _EndpointAtThatTime(_i1.EndpointCaller caller) : super(caller);
@@ -72,24 +78,89 @@ class _EndpointAtThatTime extends _i1.EndpointRef {
       );
 }
 
+class _EndpointBillionCategories extends _i1.EndpointRef {
+  _EndpointBillionCategories(_i1.EndpointCaller caller) : super(caller);
+
+  @override
+  String get name => 'billionCategories';
+
+  _i2.Future<List<_i4.BillionCategories>> getBillionCategories(
+          {String? keyword}) =>
+      caller.callServerEndpoint<List<_i4.BillionCategories>>(
+        'billionCategories',
+        'getBillionCategories',
+        {'keyword': keyword},
+      );
+
+  _i2.Future<int> addBillionCategories(
+          _i4.BillionCategories billionCategories) =>
+      caller.callServerEndpoint<int>(
+        'billionCategories',
+        'addBillionCategories',
+        {'billionCategories': billionCategories},
+      );
+}
+
+class _EndpointBillionLieux extends _i1.EndpointRef {
+  _EndpointBillionLieux(_i1.EndpointCaller caller) : super(caller);
+
+  @override
+  String get name => 'billionLieux';
+
+  _i2.Future<List<_i5.BillionLieux>> getBillionLieux({String? keyword}) =>
+      caller.callServerEndpoint<List<_i5.BillionLieux>>(
+        'billionLieux',
+        'getBillionLieux',
+        {'keyword': keyword},
+      );
+
+  _i2.Future<int> addBillionLieux(_i5.BillionLieux billionLieux) =>
+      caller.callServerEndpoint<int>(
+        'billionLieux',
+        'addBillionLieux',
+        {'billionLieux': billionLieux},
+      );
+}
+
 class _EndpointBillionPlaces extends _i1.EndpointRef {
   _EndpointBillionPlaces(_i1.EndpointCaller caller) : super(caller);
 
   @override
   String get name => 'billionPlaces';
 
-  _i2.Future<List<_i4.BillionPlaces>> getBillionPlaces({String? keyword}) =>
-      caller.callServerEndpoint<List<_i4.BillionPlaces>>(
+  _i2.Future<List<_i6.BillionPlaces>> getBillionPlaces({String? keyword}) =>
+      caller.callServerEndpoint<List<_i6.BillionPlaces>>(
         'billionPlaces',
         'getBillionPlaces',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addBillionPlaces(_i4.BillionPlaces billionPlaces) =>
+  _i2.Future<int> addBillionPlaces(_i6.BillionPlaces billionPlaces) =>
       caller.callServerEndpoint<int>(
         'billionPlaces',
         'addBillionPlaces',
         {'billionPlaces': billionPlaces},
+      );
+}
+
+class _EndpointBillionTerms extends _i1.EndpointRef {
+  _EndpointBillionTerms(_i1.EndpointCaller caller) : super(caller);
+
+  @override
+  String get name => 'billionTerms';
+
+  _i2.Future<List<_i7.BillionTerms>> getBillionTerms({String? keyword}) =>
+      caller.callServerEndpoint<List<_i7.BillionTerms>>(
+        'billionTerms',
+        'getBillionTerms',
+        {'keyword': keyword},
+      );
+
+  _i2.Future<int> addBillionTerms(_i7.BillionTerms billionTerms) =>
+      caller.callServerEndpoint<int>(
+        'billionTerms',
+        'addBillionTerms',
+        {'billionTerms': billionTerms},
       );
 }
 
@@ -99,7 +170,7 @@ class _EndpointBillion extends _i1.EndpointRef {
   @override
   String get name => 'billion';
 
-  _i2.Future<int> addBillion(_i5.Billion billion) =>
+  _i2.Future<int> addBillion(_i8.Billion billion) =>
       caller.callServerEndpoint<int>(
         'billion',
         'addBillion',
@@ -113,14 +184,14 @@ class _EndpointCategories extends _i1.EndpointRef {
   @override
   String get name => 'categories';
 
-  _i2.Future<List<_i6.Categories>> getCategories({String? keyword}) =>
-      caller.callServerEndpoint<List<_i6.Categories>>(
+  _i2.Future<List<_i9.Categories>> getCategories({String? keyword}) =>
+      caller.callServerEndpoint<List<_i9.Categories>>(
         'categories',
         'getCategories',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addCategories(_i6.Categories categories) =>
+  _i2.Future<int> addCategories(_i9.Categories categories) =>
       caller.callServerEndpoint<int>(
         'categories',
         'addCategories',
@@ -134,14 +205,14 @@ class _EndpointHistoricalAtts extends _i1.EndpointRef {
   @override
   String get name => 'historicalAtts';
 
-  _i2.Future<List<_i7.HistoricalAtts>> getHistoricalAtts({String? keyword}) =>
-      caller.callServerEndpoint<List<_i7.HistoricalAtts>>(
+  _i2.Future<List<_i10.HistoricalAtts>> getHistoricalAtts({String? keyword}) =>
+      caller.callServerEndpoint<List<_i10.HistoricalAtts>>(
         'historicalAtts',
         'getHistoricalAtts',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addHistoricalAtts(_i7.HistoricalAtts historicalAtts) =>
+  _i2.Future<int> addHistoricalAtts(_i10.HistoricalAtts historicalAtts) =>
       caller.callServerEndpoint<int>(
         'historicalAtts',
         'addHistoricalAtts',
@@ -155,16 +226,16 @@ class _EndpointHistoricalAttsInvolved extends _i1.EndpointRef {
   @override
   String get name => 'historicalAttsInvolved';
 
-  _i2.Future<List<_i8.HistoricalAttsInvolved>> getHistoricalAttsInvolved(
+  _i2.Future<List<_i11.HistoricalAttsInvolved>> getHistoricalAttsInvolved(
           {String? keyword}) =>
-      caller.callServerEndpoint<List<_i8.HistoricalAttsInvolved>>(
+      caller.callServerEndpoint<List<_i11.HistoricalAttsInvolved>>(
         'historicalAttsInvolved',
         'getHistoricalAttsInvolved',
         {'keyword': keyword},
       );
 
   _i2.Future<int> addHistoricalAttsInvolved(
-          _i8.HistoricalAttsInvolved historicalAttsInvolved) =>
+          _i11.HistoricalAttsInvolved historicalAttsInvolved) =>
       caller.callServerEndpoint<int>(
         'historicalAttsInvolved',
         'addHistoricalAttsInvolved',
@@ -178,16 +249,16 @@ class _EndpointHistoricalCategories extends _i1.EndpointRef {
   @override
   String get name => 'historicalCategories';
 
-  _i2.Future<List<_i9.HistoricalCategories>> getHistoricalCategories(
+  _i2.Future<List<_i12.HistoricalCategories>> getHistoricalCategories(
           {String? keyword}) =>
-      caller.callServerEndpoint<List<_i9.HistoricalCategories>>(
+      caller.callServerEndpoint<List<_i12.HistoricalCategories>>(
         'historicalCategories',
         'getHistoricalCategories',
         {'keyword': keyword},
       );
 
   _i2.Future<int> addHistoricalCategories(
-          _i9.HistoricalCategories historicalCategories) =>
+          _i12.HistoricalCategories historicalCategories) =>
       caller.callServerEndpoint<int>(
         'historicalCategories',
         'addHistoricalCategories',
@@ -201,15 +272,15 @@ class _EndpointHistoricalJours extends _i1.EndpointRef {
   @override
   String get name => 'historicalJours';
 
-  _i2.Future<List<_i10.HistoricalJours>> getHistoricalJours(
+  _i2.Future<List<_i13.HistoricalJours>> getHistoricalJours(
           {String? keyword}) =>
-      caller.callServerEndpoint<List<_i10.HistoricalJours>>(
+      caller.callServerEndpoint<List<_i13.HistoricalJours>>(
         'historicalJours',
         'getHistoricalJours',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addHistoricalJours(_i10.HistoricalJours historicalJours) =>
+  _i2.Future<int> addHistoricalJours(_i13.HistoricalJours historicalJours) =>
       caller.callServerEndpoint<int>(
         'historicalJours',
         'addHistoricalJours',
@@ -223,15 +294,15 @@ class _EndpointHistoricalLieux extends _i1.EndpointRef {
   @override
   String get name => 'historicalLieux';
 
-  _i2.Future<List<_i11.HistoricalLieux>> getHistoricalLieux(
+  _i2.Future<List<_i14.HistoricalLieux>> getHistoricalLieux(
           {String? keyword}) =>
-      caller.callServerEndpoint<List<_i11.HistoricalLieux>>(
+      caller.callServerEndpoint<List<_i14.HistoricalLieux>>(
         'historicalLieux',
         'getHistoricalLieux',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addHistoricalLieux(_i11.HistoricalLieux historicalLieux) =>
+  _i2.Future<int> addHistoricalLieux(_i14.HistoricalLieux historicalLieux) =>
       caller.callServerEndpoint<int>(
         'historicalLieux',
         'addHistoricalLieux',
@@ -245,16 +316,16 @@ class _EndpointHistoricalLocalDates extends _i1.EndpointRef {
   @override
   String get name => 'historicalLocalDates';
 
-  _i2.Future<List<_i12.HistoricalLocalDates>> getHistoricalLocalDtes(
+  _i2.Future<List<_i15.HistoricalLocalDates>> getHistoricalLocalDtes(
           {String? keyword}) =>
-      caller.callServerEndpoint<List<_i12.HistoricalLocalDates>>(
+      caller.callServerEndpoint<List<_i15.HistoricalLocalDates>>(
         'historicalLocalDates',
         'getHistoricalLocalDtes',
         {'keyword': keyword},
       );
 
   _i2.Future<int> addHistoricalLocalDates(
-          _i12.HistoricalLocalDates historicalLocalDates) =>
+          _i15.HistoricalLocalDates historicalLocalDates) =>
       caller.callServerEndpoint<int>(
         'historicalLocalDates',
         'addHistoricalLocalDates',
@@ -268,14 +339,14 @@ class _EndpointHistoricalMois extends _i1.EndpointRef {
   @override
   String get name => 'historicalMois';
 
-  _i2.Future<List<_i13.HistoricalMois>> getHistoricalMois({String? keyword}) =>
-      caller.callServerEndpoint<List<_i13.HistoricalMois>>(
+  _i2.Future<List<_i16.HistoricalMois>> getHistoricalMois({String? keyword}) =>
+      caller.callServerEndpoint<List<_i16.HistoricalMois>>(
         'historicalMois',
         'getHistoricalMois',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addHistoricalMois(_i13.HistoricalMois historicalMois) =>
+  _i2.Future<int> addHistoricalMois(_i16.HistoricalMois historicalMois) =>
       caller.callServerEndpoint<int>(
         'historicalMois',
         'addHistoricalMois',
@@ -289,14 +360,14 @@ class _EndpointHistoricalOrgs extends _i1.EndpointRef {
   @override
   String get name => 'historicalOrgs';
 
-  _i2.Future<List<_i14.HistoricalOrgs>> getHistoricalOrgs({String? keyword}) =>
-      caller.callServerEndpoint<List<_i14.HistoricalOrgs>>(
+  _i2.Future<List<_i17.HistoricalOrgs>> getHistoricalOrgs({String? keyword}) =>
+      caller.callServerEndpoint<List<_i17.HistoricalOrgs>>(
         'historicalOrgs',
         'getHistoricalOrgs',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addHistoricalOrgs(_i14.HistoricalOrgs historicalOrgs) =>
+  _i2.Future<int> addHistoricalOrgs(_i17.HistoricalOrgs historicalOrgs) =>
       caller.callServerEndpoint<int>(
         'historicalOrgs',
         'addHistoricalOrgs',
@@ -310,16 +381,16 @@ class _EndpointHistoricalPaysInvolved extends _i1.EndpointRef {
   @override
   String get name => 'historicalPaysInvolved';
 
-  _i2.Future<List<_i15.HistoricalPaysInvolved>> getHistoricalPaysInvolved(
+  _i2.Future<List<_i18.HistoricalPaysInvolved>> getHistoricalPaysInvolved(
           {String? keyword}) =>
-      caller.callServerEndpoint<List<_i15.HistoricalPaysInvolved>>(
+      caller.callServerEndpoint<List<_i18.HistoricalPaysInvolved>>(
         'historicalPaysInvolved',
         'getHistoricalPaysInvolved',
         {'keyword': keyword},
       );
 
   _i2.Future<int> addHistoricalPaysInvolved(
-          _i15.HistoricalPaysInvolved historicalPaysInvolved) =>
+          _i18.HistoricalPaysInvolved historicalPaysInvolved) =>
       caller.callServerEndpoint<int>(
         'historicalPaysInvolved',
         'addHistoricalPaysInvolved',
@@ -333,15 +404,15 @@ class _EndpointHistoricalPeople extends _i1.EndpointRef {
   @override
   String get name => 'historicalPeople';
 
-  _i2.Future<List<_i16.HistoricalPeople>> getHistoricalPeople(
+  _i2.Future<List<_i19.HistoricalPeople>> getHistoricalPeople(
           {String? keyword}) =>
-      caller.callServerEndpoint<List<_i16.HistoricalPeople>>(
+      caller.callServerEndpoint<List<_i19.HistoricalPeople>>(
         'historicalPeople',
         'getHistoricalPeople',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addHistoricalPeople(_i16.HistoricalPeople historicalPeople) =>
+  _i2.Future<int> addHistoricalPeople(_i19.HistoricalPeople historicalPeople) =>
       caller.callServerEndpoint<int>(
         'historicalPeople',
         'addHistoricalPeople',
@@ -355,15 +426,15 @@ class _EndpointHistoricalPlaces extends _i1.EndpointRef {
   @override
   String get name => 'historicalPlaces';
 
-  _i2.Future<List<_i17.HistoricalPlaces>> getHistoricalPlaces(
+  _i2.Future<List<_i20.HistoricalPlaces>> getHistoricalPlaces(
           {String? keyword}) =>
-      caller.callServerEndpoint<List<_i17.HistoricalPlaces>>(
+      caller.callServerEndpoint<List<_i20.HistoricalPlaces>>(
         'historicalPlaces',
         'getHistoricalPlaces',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addHistoricalPlaces(_i17.HistoricalPlaces historicalPlaces) =>
+  _i2.Future<int> addHistoricalPlaces(_i20.HistoricalPlaces historicalPlaces) =>
       caller.callServerEndpoint<int>(
         'historicalPlaces',
         'addHistoricalPlaces',
@@ -377,15 +448,15 @@ class _EndpointHistoricalTerms extends _i1.EndpointRef {
   @override
   String get name => 'historicalTerms';
 
-  _i2.Future<List<_i18.HistoricalTerms>> getHistoricalTerms(
+  _i2.Future<List<_i21.HistoricalTerms>> getHistoricalTerms(
           {String? keyword}) =>
-      caller.callServerEndpoint<List<_i18.HistoricalTerms>>(
+      caller.callServerEndpoint<List<_i21.HistoricalTerms>>(
         'historicalTerms',
         'getHistoricalTerms',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addHistoricalTerms(_i18.HistoricalTerms historicalTerms) =>
+  _i2.Future<int> addHistoricalTerms(_i21.HistoricalTerms historicalTerms) =>
       caller.callServerEndpoint<int>(
         'historicalTerms',
         'addHistoricalTerms',
@@ -399,7 +470,7 @@ class _EndpointHistorical extends _i1.EndpointRef {
   @override
   String get name => 'historical';
 
-  _i2.Future<int> addHistorical(_i19.Historical historical) =>
+  _i2.Future<int> addHistorical(_i22.Historical historical) =>
       caller.callServerEndpoint<int>(
         'historical',
         'addHistorical',
@@ -413,14 +484,14 @@ class _EndpointOrganisations extends _i1.EndpointRef {
   @override
   String get name => 'organisations';
 
-  _i2.Future<List<_i20.Organisations>> getOrganisations({String? keyword}) =>
-      caller.callServerEndpoint<List<_i20.Organisations>>(
+  _i2.Future<List<_i23.Organisations>> getOrganisations({String? keyword}) =>
+      caller.callServerEndpoint<List<_i23.Organisations>>(
         'organisations',
         'getOrganisations',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addOrganisations(_i20.Organisations organisations) =>
+  _i2.Future<int> addOrganisations(_i23.Organisations organisations) =>
       caller.callServerEndpoint<int>(
         'organisations',
         'addOrganisations',
@@ -434,8 +505,8 @@ class _EndpointPays extends _i1.EndpointRef {
   @override
   String get name => 'pays';
 
-  _i2.Future<List<_i21.Pays>> getPays({String? keyword}) =>
-      caller.callServerEndpoint<List<_i21.Pays>>(
+  _i2.Future<List<_i24.Pays>> getPays({String? keyword}) =>
+      caller.callServerEndpoint<List<_i24.Pays>>(
         'pays',
         'getPays',
         {'keyword': keyword},
@@ -448,14 +519,14 @@ class _EndpointPeople extends _i1.EndpointRef {
   @override
   String get name => 'people';
 
-  _i2.Future<List<_i22.People>> getPeople({String? keyword}) =>
-      caller.callServerEndpoint<List<_i22.People>>(
+  _i2.Future<List<_i25.People>> getPeople({String? keyword}) =>
+      caller.callServerEndpoint<List<_i25.People>>(
         'people',
         'getPeople',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addPeople(_i22.People people) =>
+  _i2.Future<int> addPeople(_i25.People people) =>
       caller.callServerEndpoint<int>(
         'people',
         'addPeople',
@@ -469,14 +540,14 @@ class _EndpointPlaces extends _i1.EndpointRef {
   @override
   String get name => 'places';
 
-  _i2.Future<List<_i23.Places>> getPlaces({String? keyword}) =>
-      caller.callServerEndpoint<List<_i23.Places>>(
+  _i2.Future<List<_i26.Places>> getPlaces({String? keyword}) =>
+      caller.callServerEndpoint<List<_i26.Places>>(
         'places',
         'getPlaces',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addPlaces(_i23.Places places) =>
+  _i2.Future<int> addPlaces(_i26.Places places) =>
       caller.callServerEndpoint<int>(
         'places',
         'addPlaces',
@@ -490,14 +561,14 @@ class _EndpointTerms extends _i1.EndpointRef {
   @override
   String get name => 'terms';
 
-  _i2.Future<List<_i24.Terms>> getTerms({String? keyword}) =>
-      caller.callServerEndpoint<List<_i24.Terms>>(
+  _i2.Future<List<_i27.Terms>> getTerms({String? keyword}) =>
+      caller.callServerEndpoint<List<_i27.Terms>>(
         'terms',
         'getTerms',
         {'keyword': keyword},
       );
 
-  _i2.Future<int> addTerms(_i24.Terms terms) => caller.callServerEndpoint<int>(
+  _i2.Future<int> addTerms(_i27.Terms terms) => caller.callServerEndpoint<int>(
         'terms',
         'addTerms',
         {'terms': terms},
@@ -506,25 +577,28 @@ class _EndpointTerms extends _i1.EndpointRef {
 
 class _Modules {
   _Modules(Client client) {
-    auth = _i25.Caller(client);
+    auth = _i28.Caller(client);
   }
 
-  late final _i25.Caller auth;
+  late final _i28.Caller auth;
 }
 
 class Client extends _i1.ServerpodClient {
   Client(
     String host, {
-    _i26.SecurityContext? context,
+    _i29.SecurityContext? context,
     _i1.AuthenticationKeyManager? authenticationKeyManager,
   }) : super(
           host,
-          _i27.Protocol(),
+          _i30.Protocol(),
           context: context,
           authenticationKeyManager: authenticationKeyManager,
         ) {
     atThatTime = _EndpointAtThatTime(this);
+    billionCategories = _EndpointBillionCategories(this);
+    billionLieux = _EndpointBillionLieux(this);
     billionPlaces = _EndpointBillionPlaces(this);
+    billionTerms = _EndpointBillionTerms(this);
     billion = _EndpointBillion(this);
     categories = _EndpointCategories(this);
     historicalAtts = _EndpointHistoricalAtts(this);
@@ -550,7 +624,13 @@ class Client extends _i1.ServerpodClient {
 
   late final _EndpointAtThatTime atThatTime;
 
+  late final _EndpointBillionCategories billionCategories;
+
+  late final _EndpointBillionLieux billionLieux;
+
   late final _EndpointBillionPlaces billionPlaces;
+
+  late final _EndpointBillionTerms billionTerms;
 
   late final _EndpointBillion billion;
 
@@ -597,7 +677,10 @@ class Client extends _i1.ServerpodClient {
   @override
   Map<String, _i1.EndpointRef> get endpointRefLookup => {
         'atThatTime': atThatTime,
+        'billionCategories': billionCategories,
+        'billionLieux': billionLieux,
         'billionPlaces': billionPlaces,
+        'billionTerms': billionTerms,
         'billion': billion,
         'categories': categories,
         'historicalAtts': historicalAtts,

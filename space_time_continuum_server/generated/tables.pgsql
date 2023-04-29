@@ -27,6 +27,38 @@ ALTER TABLE ONLY "billion"
 
 
 --
+-- Class BillionCategories as table billion_categories
+--
+
+CREATE TABLE "billion_categories" (
+  "id" serial,
+  "billion_id" integer NOT NULL,
+  "categories" json NOT NULL
+);
+
+ALTER TABLE ONLY "billion_categories"
+  ADD CONSTRAINT billion_categories_pkey PRIMARY KEY (id);
+
+
+--
+-- Class BillionLieux as table billion_lieux
+--
+
+CREATE TABLE "billion_lieux" (
+  "id" serial,
+  "billion_id" integer NOT NULL,
+  "latitude" double precision NOT NULL,
+  "longitude" double precision NOT NULL,
+  "three_d_x" double precision NOT NULL,
+  "three_d_y" double precision NOT NULL,
+  "three_d_z" double precision NOT NULL
+);
+
+ALTER TABLE ONLY "billion_lieux"
+  ADD CONSTRAINT billion_lieux_pkey PRIMARY KEY (id);
+
+
+--
 -- Class BillionPlaces as table billion_places
 --
 
@@ -38,6 +70,20 @@ CREATE TABLE "billion_places" (
 
 ALTER TABLE ONLY "billion_places"
   ADD CONSTRAINT billion_places_pkey PRIMARY KEY (id);
+
+
+--
+-- Class BillionTerms as table billion_terms
+--
+
+CREATE TABLE "billion_terms" (
+  "id" serial,
+  "billion_id" integer NOT NULL,
+  "terms" json NOT NULL
+);
+
+ALTER TABLE ONLY "billion_terms"
+  ADD CONSTRAINT billion_terms_pkey PRIMARY KEY (id);
 
 
 --
