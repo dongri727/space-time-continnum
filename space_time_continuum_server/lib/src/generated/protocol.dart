@@ -71,12 +71,14 @@ import 'package:space_time_continuum_server/src/generated/historical/historical_
     as _i45;
 import 'package:space_time_continuum_server/src/generated/historical/historical_terms.dart'
     as _i46;
-import 'package:space_time_continuum_server/src/generated/organisations.dart'
+import 'package:space_time_continuum_server/src/generated/historical.dart'
     as _i47;
-import 'package:space_time_continuum_server/src/generated/pays.dart' as _i48;
-import 'package:space_time_continuum_server/src/generated/people.dart' as _i49;
-import 'package:space_time_continuum_server/src/generated/places.dart' as _i50;
-import 'package:space_time_continuum_server/src/generated/terms.dart' as _i51;
+import 'package:space_time_continuum_server/src/generated/organisations.dart'
+    as _i48;
+import 'package:space_time_continuum_server/src/generated/pays.dart' as _i49;
+import 'package:space_time_continuum_server/src/generated/people.dart' as _i50;
+import 'package:space_time_continuum_server/src/generated/places.dart' as _i51;
+import 'package:space_time_continuum_server/src/generated/terms.dart' as _i52;
 export 'at_that_time.dart';
 export 'billion.dart';
 export 'billion/billion_categories.dart';
@@ -1477,25 +1479,29 @@ class Protocol extends _i1.SerializationManagerServer {
           .map((e) => deserialize<_i46.HistoricalTerms>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i47.Organisations>) {
+    if (t == List<_i47.Historical>) {
+      return (data as List).map((e) => deserialize<_i47.Historical>(e)).toList()
+          as dynamic;
+    }
+    if (t == List<_i48.Organisations>) {
       return (data as List)
-          .map((e) => deserialize<_i47.Organisations>(e))
+          .map((e) => deserialize<_i48.Organisations>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i48.Pays>) {
-      return (data as List).map((e) => deserialize<_i48.Pays>(e)).toList()
+    if (t == List<_i49.Pays>) {
+      return (data as List).map((e) => deserialize<_i49.Pays>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i49.People>) {
-      return (data as List).map((e) => deserialize<_i49.People>(e)).toList()
+    if (t == List<_i50.People>) {
+      return (data as List).map((e) => deserialize<_i50.People>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i50.Places>) {
-      return (data as List).map((e) => deserialize<_i50.Places>(e)).toList()
+    if (t == List<_i51.Places>) {
+      return (data as List).map((e) => deserialize<_i51.Places>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i51.Terms>) {
-      return (data as List).map((e) => deserialize<_i51.Terms>(e)).toList()
+    if (t == List<_i52.Terms>) {
+      return (data as List).map((e) => deserialize<_i52.Terms>(e)).toList()
           as dynamic;
     }
     try {

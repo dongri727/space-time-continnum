@@ -69,13 +69,15 @@ import 'package:space_time_continuum_client/src/protocol/historical/historical_p
     as _i43;
 import 'package:space_time_continuum_client/src/protocol/historical/historical_terms.dart'
     as _i44;
-import 'package:space_time_continuum_client/src/protocol/organisations.dart'
+import 'package:space_time_continuum_client/src/protocol/historical.dart'
     as _i45;
-import 'package:space_time_continuum_client/src/protocol/pays.dart' as _i46;
-import 'package:space_time_continuum_client/src/protocol/people.dart' as _i47;
-import 'package:space_time_continuum_client/src/protocol/places.dart' as _i48;
-import 'package:space_time_continuum_client/src/protocol/terms.dart' as _i49;
-import 'package:serverpod_auth_client/module.dart' as _i50;
+import 'package:space_time_continuum_client/src/protocol/organisations.dart'
+    as _i46;
+import 'package:space_time_continuum_client/src/protocol/pays.dart' as _i47;
+import 'package:space_time_continuum_client/src/protocol/people.dart' as _i48;
+import 'package:space_time_continuum_client/src/protocol/places.dart' as _i49;
+import 'package:space_time_continuum_client/src/protocol/terms.dart' as _i50;
+import 'package:serverpod_auth_client/module.dart' as _i51;
 export 'at_that_time.dart';
 export 'billion.dart';
 export 'billion/billion_categories.dart';
@@ -378,29 +380,33 @@ class Protocol extends _i1.SerializationManager {
           .map((e) => deserialize<_i44.HistoricalTerms>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i45.Organisations>) {
+    if (t == List<_i45.Historical>) {
+      return (data as List).map((e) => deserialize<_i45.Historical>(e)).toList()
+          as dynamic;
+    }
+    if (t == List<_i46.Organisations>) {
       return (data as List)
-          .map((e) => deserialize<_i45.Organisations>(e))
+          .map((e) => deserialize<_i46.Organisations>(e))
           .toList() as dynamic;
     }
-    if (t == List<_i46.Pays>) {
-      return (data as List).map((e) => deserialize<_i46.Pays>(e)).toList()
+    if (t == List<_i47.Pays>) {
+      return (data as List).map((e) => deserialize<_i47.Pays>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i47.People>) {
-      return (data as List).map((e) => deserialize<_i47.People>(e)).toList()
+    if (t == List<_i48.People>) {
+      return (data as List).map((e) => deserialize<_i48.People>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i48.Places>) {
-      return (data as List).map((e) => deserialize<_i48.Places>(e)).toList()
+    if (t == List<_i49.Places>) {
+      return (data as List).map((e) => deserialize<_i49.Places>(e)).toList()
           as dynamic;
     }
-    if (t == List<_i49.Terms>) {
-      return (data as List).map((e) => deserialize<_i49.Terms>(e)).toList()
+    if (t == List<_i50.Terms>) {
+      return (data as List).map((e) => deserialize<_i50.Terms>(e)).toList()
           as dynamic;
     }
     try {
-      return _i50.Protocol().deserialize<T>(data, t);
+      return _i51.Protocol().deserialize<T>(data, t);
     } catch (_) {}
     return super.deserialize<T>(data, t);
   }
@@ -408,7 +414,7 @@ class Protocol extends _i1.SerializationManager {
   @override
   String? getClassNameForObject(Object data) {
     String? className;
-    className = _i50.Protocol().getClassNameForObject(data);
+    className = _i51.Protocol().getClassNameForObject(data);
     if (className != null) {
       return 'serverpod_auth.$className';
     }
@@ -494,7 +500,7 @@ class Protocol extends _i1.SerializationManager {
   dynamic deserializeByClassName(Map<String, dynamic> data) {
     if (data['className'].startsWith('serverpod_auth.')) {
       data['className'] = data['className'].substring(15);
-      return _i50.Protocol().deserializeByClassName(data);
+      return _i51.Protocol().deserializeByClassName(data);
     }
     if (data['className'] == 'AtThatTime') {
       return deserialize<_i2.AtThatTime>(data['data']);

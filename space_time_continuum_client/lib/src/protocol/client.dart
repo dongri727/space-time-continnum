@@ -476,6 +476,13 @@ class _EndpointHistorical extends _i1.EndpointRef {
         'addHistorical',
         {'historical': historical},
       );
+
+  _i2.Future<List<_i22.Historical>> getHistorical(String? keyword) =>
+      caller.callServerEndpoint<List<_i22.Historical>>(
+        'historical',
+        'getHistorical',
+        {'keyword': keyword},
+      );
 }
 
 class _EndpointOrganisations extends _i1.EndpointRef {
